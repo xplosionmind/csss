@@ -1,0 +1,14 @@
+title: Computer Sciences are Social Sciences
+subtitle: An enquiry concerning the need of a philosophical approach to the digital domain
+author: Tommaso Marmo
+date: Acedemic year 2022/2023
+toc: true
+lang: en
+bibliography: 'Computer Sciences are Social Sciences.bib'
+supervisor: Prof. Fabrizio Turoldo
+papersize: a4
+colorlinks: true
+dedication: to Aaron Swartz and Jonathan Larson
+documentclass: book
+geometry:
+  - margin=1.5in

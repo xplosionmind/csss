@@ -1,0 +1,890 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+
+\DocumentMetadata{pdfstandard=A-2b}
+\documentclass[
+  a4paper,
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\definecolor{rred}{HTML}{D00000}
+\definecolor{bblue}{HTML}{3185FC}
+\hypersetup{
+  pdftitle={Computer Sciences are Social Sciences},
+  pdfauthor={Tommaso Marmo},
+  pdflang={en},
+  colorlinks=false,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Computer Sciences are Social Sciences}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{An enquiry concerning the need of a philosophical approach to the digital domain}
+\author{Tommaso Marmo}
+\date{Acedemic year 2022/2023}
+
+\usepackage{eso-pic}
+\renewcommand{\maketitle}{%
+  \newpage
+	\thispagestyle{empty}
+	\null
+  \AddToShipoutPicture*{%
+    \put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{./csss-front.pdf}}}
+  \newpage
+}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\mainmatter
+\hypertarget{title-block-header}{}
+\hypertarget{computer-sciences-are-social-sciences}{%
+\chapter{Computer Sciences are Social Sciences}\label{computer-sciences-are-social-sciences}}
+
+An enquiry concerning the need of a philosophical approach to the digital domain
+
+Tommaso Marmo
+
+Acedemic year 2022/2023
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+We all have grown used to an ubiquitous and apparently relentlessly evolving digital domain. Far from intending to judge, and for sure not to evaluate the positiveness and the drawbacks of digital technology in general, this thesis intends to question the deeper historical, philosophical and sociological framework at the core of Computer Sciences, with a special focus on the Internet.
+
+The majority of humanist endeavors to analyze Information Technology---be them journalistic or academic---too easily stumble upon a dogmatic vision of the status quo, conducting research on superficial phenomena, seldom proposing arguments outside the current paradigm. Anything that involves tinkering with code or with computers is believed to be a ``nerds'' matter.
+
+With this thesis, I advocate for a paradigm subversion, a novel interpretation of computer sciences as social, human, sciences. The following pages are meant to bring to light how socio-philosophical---but also political---approaches to the virtual domain too often just scratch the surface of a science that has unprecedentedly shaped humanity. Making truly better technology should mean putting thought, not money, first.
+
+This dissertation follows a chronological order. It starts from a selection of relevant facts of the story of the Internet, then it goes on addressing how it arguably degenerated to what it is now, and why current digital technology should be labeled as ``surveillance capitalism''. By shifting our attention to the future of the Internet, the approach too is going to be shifting from a phenomenological and ontological one to a normative one.
+
+\hypertarget{an-historical-account}{%
+\chapter{An Historical Account}\label{an-historical-account}}
+
+The Internet we supposedly know nowadays is so vast, ubiquitous, and complex that it is virtually impossible to frame it within a clear and unique meaning. Nevertheless, no matter how confusing the digital world has grown to be, the Internet's most technical and fundamental structure is the one from which any other significant aspect stems. Therefore, the unavoidable starting point for any comprehensive argumentation concerning the Internet must be a critical general analysis of its relatively brief but extremely dense and eventful history. Since this dissertation is not chiefly concerned with the past, but rather it focuses on the present and on the future of the Internet, my historical assessment will be fairly superficial, and limited to the aspects that I pinpoint as crucial to understand the current dynamics governing the Web of today, be them positive or negative.
+
+\hypertarget{paul-barans-centrifugal-network}{%
+\section{Paul Baran's ``centrifugal'' network}\label{paul-barans-centrifugal-network}}
+
+The Internet was born out of the strategic military endeavors of the US, stimulated by the Cold War. The security of the national communication infrastructure was among the country's most pressing concerns. In particular, the primary worry was the lack of coordination capabilities to launch a counterattack after a potential first strike by the USSR {(Report of the {NET Evaluation Subcommittee}, {National Security Council} 1963)}. This problem brought the engineer Paul Baran to conceive a game-changing communication system based on the fragmentation and decentralization of packages of information, to prevent having a single point of failure. In his A History of the Internet and the Digital Future, Johnny Ryan highlights the essential principles of Baran's idea {(Ryan 2010)}:
+
+\begin{quote}
+Baran's concept had the same \textbf{centrifugal} character that defines the Internet today. At its most basic, \ldots{} the ``centrifugal'' approach is \uline{to flatten established hierarchies and put power and responsibility at the nodal level} so that each node is equal. Baran's network focused on what he called ``\uline{user to user rather than \ldots{} centre-to-centre operation}''.
+\end{quote}
+
+\begin{figure}
+\centering
+\includegraphics{./baran-diagram.jpg}
+\caption{Paul Baran's 1964 Internet conceptualization}
+\end{figure}
+
+What was revolutionary was indeed the counter-intuitive effort to disperse and split up information rather than consolidating and securing it within one single communication channel. Therefore, instead of focusing on making the existing system as fail-proof as possible by attempting to physically and theoretically secure a few core and indispensable communication centers, Baran put in question that very structure, and turned it upside down {(Baran 1960)}. It does not come as a surprise to know that his idea was so brilliant and courageous to be considered too risky. Baran's invention was projected to cost 60 millions dollars in order to be implemented in 1964, on the opposite, the existing centralized and radio-based communication system was costing 2 billions per year. Despite the blatant economical advantages and the immense technological potential of this system, AT\&T, the major US communication company in the US at the time, refused to invest in the project {({``Paul {Baran}: {An Interview Conducted} by {David Hochfelder}''} 1999)}. Such reluctance is not limited to the embryonic internet of the early 70s, but it is rather a common trait of the initial history of the Internet, up until the early 90s.
+
+\hypertarget{licklider-and-arpa}{%
+\section{Licklider and ARPA}\label{licklider-and-arpa}}
+
+The main reason of such diffused skepticism could be easily traced back to the subversive and literally revolutionary vision the early internet brought forward. In a century thorn by global wars, astonishing and unsettling discoveries, the last thing politics and the market wanted was to start questioning one of the most essential and reliable tools people could count on: the communication system. Still, once it entered the play field of technological advancement, the Internet showed a potential too great to be dismissed for good. Even before Baran's theory, already in February 1958 the ARPA (predecessor of the current widely known DARPA) was born {(Schafer, Cooper, and Paloque-Bergès 2019)}. One of its most prominent figures was the psychologist and computer scientist Joseph Carl Robnett Licklider, who soon became one of the protagonists of the history of the Internet. For him too, Ryan frames perfectly his visionary and ambitious plan:
+
+\begin{quote}
+At the core of Licklider's thinking was \uline{an emphasis on collaboration}. Licklider posited a future scenario in which a researcher at one research centre could find a useful computer resource over the network from a research centre elsewhere. This, in a world of incompatible machines and jealously guarded computing resources, was far-sighted talk indeed.
+\end{quote}
+
+As the Internet was kicking off, breeding Licklider's ambition was not an elitist ensemble of highly trained engineers or capable government contractors, but rather a quite rambling and undefined bunch of Computer Sciences undergraduates from several US universities. Funded by ARPA, they created an informal ``network working group''.
+
+\begin{quote}
+Finding themselves working in a vacuum, the students connected to ARPANET, who had been given the task in 1969 of developing the technical protocols, also began \uline{to establish the informal protocols that would influence interpersonal communications on the Internet in general}.\\
+Uncertain of their positions within the hierarchy of the ARPANET project, the students issued notes of their protocols under the title ``Request for Comments'' (RFC). Steve Croker, a graduate student who received his bachelor's degree at UCLA only a year before, used the title Request For Comments to \uline{make the invitation to participate as open as possible}, and \uline{to minimize any claim to authority} that working on so crucial an aspect of the network as its protocols might imply.
+\end{quote}
+
+As further evidence of the deeply informal and casual setting within which the internet was conceived, Croker recalls: ``I had to work in a bathroom, so as not to disturb the friends I was staying with, who were all asleep'' {(Crocker 2009)}. From that very bathroom was drafted the first request for comments of many to come, as they still form the core of the Internet we use today. Darius Kazemi, a scholar and Internet activist, in 2019 published \href{https://write.as/365-rfcs/365-ietf-rfcs-a-50th-anniversary-dive}{a series of blog posts} explaining, analyzing, and commenting all the RFCs published until that year, highlighting their major role in defining the Internet {(Kazemi 2019)}. It is worth noting how curious it is that Computer Science is arguably the only science where protocols, standards, and laws formalized at the earliest stage of technological development are still at the core of present cutting-edge tools and products.
+
+\hypertarget{the-web}{%
+\section{The Web}\label{the-web}}
+
+Profiting of what had grown to be an actual ``Internet'', in 1990 CERN researcher Tim Berners-Lee created the Web. His work started from defining HTML, literally the ``HyperText Markup Language'', meaning a formal language that allowed to insert hyperlinks inside any text. In this case too, the fundamental purpose of the digital pioneer was to create connections outside the mere content of a writing, but linking keywords to other sources, creating a potentially infinite network of resources connected to each other. Today the concept of a ``link'' is so diffused it is taken from granted, but during the last decade of the XIX century it was a curious novelty casting a completely new perspective, and arguably even a new mentality paradigma. Hence, during its first few years, HTML adoption was so deluding that for a long time the only document written in HTML was CERN's telephone directory {(Berners-Lee 1998)}. Slowly but steadily, thanks to great commitment and sacrifices by Berners-Lee, the Web community grew to be world wide: in 1994 the early developers of the World Wide Web met for a ``www wizards' workshop''. Berners-Lee proposed the idea of a consortium to oversee the future direction of the Web. The www Consortium, known as ``W3C'', was formed to promote interoperability and standardization of web technologies {({``Facts {About W3C}''} n.d.)}.
+
+Summarizing, we could pinpoint a few chief traits encompassing roughly the first 30 years of the history of the Internet:
+
+\begin{itemize}
+\tightlist
+\item
+  a widespread \emph{diffidence} by non-experts towards digital telecommunications, because of its subversive \emph{complexity}, but also because of\ldots{}
+\item
+  \ldots a fundamental \emph{counter-intuitiveness} of the infrastructure, based on\ldots{}
+\item
+  \ldots a heavily \emph{decentralized} system, where no main node exists, and whose effectiveness is based on the \emph{distribution} and \emph{redundancy} of information and computing resources;
+\item
+  a focus on \emph{collaboration}, on \emph{sharing ideas} and resources, on commonly defined standards allowing \emph{interoperability};
+\item
+  both a strive and a drive for \emph{interconnecting} concepts, users, and devices;
+\item
+  a diffused feeling of liberty and \emph{curiosity}, fostered by a great \emph{informality} coupled with a cozy and friendly community;
+\item
+  lack of interest from the financial world.
+\end{itemize}
+
+These considerations are of critical significance as they offer an invaluable point of view to analyze the Internet of today by first recognizing the long-gone environment it was conceived in. This atmosphere might even appear as whimsical and idealistic, yet this was the panorama before the watershed events that turned the wonderful Web 1, the one described up to now, into the monstrous gigantic monolith of Web 2. I argue that, as far and as deep as my research could go, 1994 was the last year during which the development of Web technologies and of the Internet as a whole was carried out as disentangled from any economical speculative purpose {(Kahin 1990)}.
+
+\hypertarget{the-internets-original-sin}{%
+\section{The Internet's original sin}\label{the-internets-original-sin}}
+
+I identify April 30\textsuperscript{th} 1995 as the date of what I believe to be the ``original sin'' of the Internet: unhindered by any kind of regulation, the property of the Internet was passed by the US' National Science Foundation (NSF) to private contractors exclusively.
+
+It is greatly beyond the scope of this writing to bring forward the public vs.~private debate, nor it is to inquire whether financial drives are positive or negative, but it is blatant that the ``free space'' left by the public organizations taking gradual steps back in their involvement with the Internet was rapidly filled by private entities oriented towards profit and driven by it. The first ``dot com'' boom of the 1990s was measured by and within the market, using an economical-first approach. Such way of thinking irreversibly influenced, possibly even biased, the framework of evaluation and conception of the Internet and, more specifically, of the Web. Not only this perspective changed the Internet (and Computer Sciences) for good, but it warped the global financial market, too: whereas in the pre-dot-com era a company required a minimum of four quarters of profitability to attract funding, these rules were forgotten in the dot-com frenzy.
+
+Indeed, in 1995, one year later the first www conference, Netscape, developing Mosaic Netscape browser, advanced its Initial Public Offering for US\$28 per share: it was the highest IPO to date {({``Netscape {Communications Corporation Announces Initial Public Offering Of} 5,000,000 {Shares Of Common Stock}''} 1995)}. This event is the first key milestone to interpret what I argue to be a common thread and threat of all of the evolution of technologies related to the Internet: some innovation remains niche and complex until some corporation sees a profitability potential in it, thus it invests to start ``commodifying'' it. Albeit commodification has a positive value, since it increases the diffusion of a technology, it comes with significant trade-offs in terms of freedom for its users, who remain trapped by getting used to use a tool they do not understand, hence they can be easily manipulated to achieve market purposes. This idea is at the core of consumerism and capitalism, and there is nothing new about this. The point I would like to raise in this dissertation is that hidden behind a thick cover of code and sophisticated technical devices lies a truly social matter which has never considered: in the domain of Computer Sciences, be it because of its extreme complexity caused by multiple layers of protocols, standards and code, the strictly social aspect has been investigated very little.
+
+\hypertarget{the-spread-of-surveillance-capitalism}{%
+\chapter{The spread of Surveillance Capitalism}\label{the-spread-of-surveillance-capitalism}}
+
+At the dawn of the second millennium, the World was experiencing an almost unprecedented technological revolution. Guiding this crusade aimed at claiming control over the future of humanity---thanks to the wonders of the Internet---were a sweeping amount of newborn companies, mainly US-based. The thrill born out of an astounding and appealing opportunity of profit drove virtually anyone to bet on this game-changing technology, which was turning out to be ``the big next thing''. Nevertheless, the end of previous chapter narrates a different story. Fouled by the incredible innovations technological research gave birth to, investors went all-in to support this trend, which exploded in what has been labeled as ``the dot-com bubble'' {(Chen, Chou, and Lu 2018)}.
+
+\begin{figure}
+\centering
+\includegraphics{./graphs/nasdaq-historical-chart.png}
+\caption{NASDAQ Historical chart}
+\end{figure}
+
+As history repeats itself, the run for investments at the beginning of the Internet essentially has no difference with the run for gold of the Wild West, the early speculation on oil extraction between the XIX and the XX century, or the cryptocurrencies and ``Web3'' mania: intercepting the faintest opportunity for profit, an economically-driven society such as the current global one makes its best effort to explore and exploit it. I believe that, since its original sin, the Internet showed to be one of such opportunities and, possibly, the greatest.
+
+A few examples to notice the trend. Particularly since the explosion of Facebook in 2004, centralized for-profit social networks started harvesting users' data as their business model {(Liao, Hsian, and Wu 2014)}, but only after more than a dozen years later, in 2018, the European Union was able to publish its General Data Protection Regulation (GDPR) to hinder privacy violations and enforce fundamental digital privacy rights {(Laybats and Davies 2018)}, {(Fuchs and Sandoval 2015)}. Centralized and closed messaging software such as WhatsApp quickly monopolized the way people communicated since the early 2010s {(Fernández Robin, McCoy, and Yáñez 2017)}, and only in 2022 the European Parliament approved the Digital Markets Act (DMA) {(\emph{Digital {Markets Act}} 2022)}, forcing the biggest messaging platforms to open their protocols and concede Adversarial Interoperability, one of the key solutions I will extensively investigate by drawing the conclusions of this Thesis. As a last example, since the last months of 2022 the public debate has been inflamed by the sudden rise of ``Artificial Intelligence'' (AI), but EU's AI Act {(\emph{Proposal for a {REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE} ({ARTIFICIAL INTELLIGENCE ACT}) {AND AMENDING CERTAIN UNION LEGISLATIVE ACTS}} 2021)} is still in the works.
+
+Regardless of the relentless lobbying efforts or of any more or less relevant external factor, the pattern is clear: when technological advancement is driven by economic interest, the sole rule that matters at the beginning is to make profit, and any ethical concern for socio-political repercussions is ignored or even discarded, until public institutions come into play. Humanist, political, or social analyses are carried out \emph{a posteriori}, therefore with a limited possibility of actually limiting the damage, since the innovation under scrutiny has already become widespread.
+
+How is that so, and, most importantly, why?
+
+Studying the phenomenon of the degeneration of the Internet because of its fagocitation by Capitalism is Shoshana Zuboff, Stanford emeritus professor of Sociology who has been dedicating the last fifteen years completely on unmasking what she named ``Surveillance Capitalism''. Her work The Age of Surveillance Capitalism, published in 2018, constitutes a milestone which is the basis of any analysis of the Web of today, proving that it cannot be investigated if not through the lens of Capitalism {(Zuboff 2019)}.
+
+As the present chapter is going to show, the definition and the very nature of the contemporary digital world cannot be separated from the social, political and economical environment of today. It is because of this reason that diving deeper in understanding surveillance capitalism corresponds to investigating the present issues in global technology.
+
+\begin{quote}
+Surveillance capitalism unilaterally claims \uline{human experience as free raw material} for translation into behavioral data.
+\end{quote}
+
+Usually, behavioral data is disguised as useful or even necessary to improve products, but Zuboff recognizes that gathered data are far more than the ones which are actually used. As a consequence, companies collect \emph{behavioral surplus}, traded within \emph{behavioral futures markets}. As traditional capitalism is based on the practice of evaluating business in function of the estimated future profit, surveillance capitalism is built upon the eagerness ``to lay bets on our future behavior''. Still, surveillance capitalism is not to be read as ``yet another representation of capitalism'', but it radically redefines how the market, geopolitics (as the case study in the next chapter is going to prove), and even psychology {(Verduyn et al. 2017)} work in the contemporary world.
+
+\hypertarget{the-unprecedented}{%
+\section{``The Unprecedented''}\label{the-unprecedented}}
+
+Zuboff recognizes that ``one explanation for surveillance capitalism's many triumphs floats above them all: it is \emph{unprecedented}''. She compares the phenomenon which concerned the Internet in the early 2000s to a fire that burnt her house to the ground after it got struck by a lightning. When it happened, professor Zuboff believed she had the time to gather the most important things in the house before evacuating, because she observed that the smoke coming out of the striking point was feeble and localized. Nevertheless, the fire marshal got to the house just in time to throw professor Zuboff out of the house, before it suddenly exploded.
+
+Zuboff uses this real life example to prove that the true danger lies in the unprecedented: just as she could have never known that, regardless of the thickness of the smoke she was seeing, her house could explode, the author argues the world is not able to tackle the nature of surveillance capitalism without shifting or even wholly reversing the paradigma with respect to any conventional socio-economical analysis.
+
+\begin{quote}
+The unprecedented nature of surveillance capitalism has enabled it to elude systematic context because it cannot be adequately grasped with our existing concepts. {[}\ldots{]} \uline{the existing categories fall short in in identifying and contesting the most crucial and unprecedented facts of this new regime}.
+\end{quote}
+
+Thus, the first step we are required to entertain is to deconstruct and demystify the castle of sand built by surveillance capitalism. In order to do so, it must be acknowledged how such endeavor cannot be carried out using solely computer engineering instruments, but considering the deep interrelation between any technical infrastructure and the socio-economical purposes that shape it. Even though the strictly technical tools are assumed as unquestioned axioms by social scientists, reality proves the opposite: it is exactly the socio-economical environment that determines the imperatives technological development should follow. The lack of a deeper understanding of code and information technology from a humanistic perspective attributes a dogmatic approach to any study concerning Computer Science.
+
+\begin{quote}
+\uline{Surveillance capitalism is not technology}; it is a logic that imbues technology and commands it into action. Surveillance capitalism is a market form that is unimaginable outside the digital milieu, but it is not the same as the ``digital''. {[}\ldots{]} surveillance capitalists want us to think that their practices are inevitable expressions of the technologies they employ.
+\end{quote}
+
+Zuboff highlights the unquestioned ``inevitability'' attributed to the current way technological devices work. The excuse of addressing technical complexity brought digital companies to build their products with parts conceived to make the same products---be them hardware or software---more profitable or more functional to the producer's, and not the user's, interests. Among the firsts to notice this malicious practice was Richard Stallman, one of the last hackers remaining at MIT in the 1980s. His main concern was the depiction as illicit of any product tampering---especially if made collaboratively---that bypassed the control of the company. In Stallman's words {(Stallman 2002)}:
+
+\begin{quote}
+This meant that the first step in using a computer was to promise not to help your neighbor. \uline{A cooperating community was forbidden}. The rule made by the owners of proprietary software was, ``if you share with your neighbor, you are a pirate. If you want any changes, beg us to make them''
+\end{quote}
+
+The proprietary control exercised by the manufactures was a return to the centripetal approach of the old mainframe companies. To fight this worrisome and little understood matter, Stallman founded the free software movement in 1983, now the Free Software Foundation (FSF), as ``a movement for computer users' freedom''. The battle for ``free software'' (often followed by the specification ``free as in freedom, not free beer'', in order to clarify that software freedom went beyond the economical aspect), as fierce as it was, was and it still remains a very niche world of which there is very limited knowledge.
+
+Nevertheless, from the hacker revolution in August 1991 Linux was born. Initially a hobby project by Linus Torvalds, at the time an undergraduate Computer Sciences student from the University of Helsinki, Linux now is the most used Operating System (OS) in the world {(Moody n.d.)}. Albeit it is common knowledge that the vast majority of people use computers running Microsoft's Windows or Apple's MacOS, Linux actually powers most of the world servers, hence it composes the bedrock of the whole Internet. Furthermore, Android, Google's OS for mobile devices, is a modified version of the Linux kernel (the kernel is the heart of an OS) {({``Linux {Statistics} 2023''} n.d.)}.
+
+The story of Linux is astonishing as much as it is exemplary of the pattern being followed by the technology industry. Its development was and still is carried out by a community of hundreds of thousands of volunteer developers in any corner of the world, with Torvalds as its ``benevolent dictator'' {(Rivlin n.d.)}. The organizational framework recalls the one envisioned by Licklider: researchers and students chorally pushing forward technological development in an horizontal environment within which the main purpose is to genuinely enhance a product rather than trying to squeeze as much profit as possible out of it.
+
+\hypertarget{economy-and-technology-an-inseparable-duo}{%
+\section{Economy and technology: an inseparable duo}\label{economy-and-technology-an-inseparable-duo}}
+
+The Linux phenomenon and the events of the early 2000s make it easy to recognize the pattern that composes the anthem of digital capitalism: whenever a situation emerges, showing the same characteristics listed in the bullet points of the previous chapter, capitalism comes into play and subverts the framework, losing any horizontal or democratic approach and inserting a centralized and coercive perspective.
+
+Already in 1968, by defining ``The Concept of Economic Action'' in his Economy and Society Max Weber pointed out the inevitability of an assessment of technological development in economical terms.
+
+\begin{quote}
+The fact that what is called the technological development of modern times has been so largely oriented economically to profit-making is one of the fundamental facts of the history of technology. {[}\ldots{]} the main emphasis at all times, and especially the present, has lain in \uline{the economic determination of technological development}. Had not rational calculation formed the basis of economic activity, had there not been certain very particular conditions in its economic background, \uline{rational technology could never have come into existence}.
+\end{quote}
+
+In support of this, Weber makes the example of a hypothetical machine producing perfect atmospheric air, created using the most modern and advanced technological skills of his time. Such machine would have been technically excellent and scientifically prodigious. Nevertheless, he argues that (at the time) the machine would have possessed no economical value, because the demand for it would be null. This thought experiment brings to light how the western mentality got accustomed to a technology functional to profit, and, more broadly, necessarily linked to consumerism and economic growth. Max Weber helps us in deconstructing this factitious causality.
+
+Fast forwarding from the XIX to the XXI century, Big Tech got the upper hand on the market so strongly to even thwart in its favor the Neoclassical laws of supply and demand. The extreme significance and tightness of the relation among surveillance capitalism, the economy in general, and technology, appears clear by noting that Zuboff's work does not start from a historical analysis of technology--as opposed to what I did--but by weighting the Neoliberal background which set the basis upon which surveillance capitalism flourished.
+
+Already in the first chapter of her book, Zuboff studies ``The Apple Hack'', the capability of Apple to ``hack'' the market by introducing iTunes and the iPod in the early 2010s. Instead of waiting for the public to demand for some product, Apple started to sell it with so much noise and in so massive quantity as to dictate their customers, or the entire world, what they wanted. This practice had nothing new, since Zuboff highlights that already Henry Ford understood this concept when introducing the Ford Model T. Nevertheless, the digital aspect emphasized this endeavor, above all because it allowed to bypass the costs related to product delivery and physical assets management.
+
+\hypertarget{the-essence-of-technology}{%
+\section{The essence of technology}\label{the-essence-of-technology}}
+
+Bringing together the evidence gathered so far, it is self-evident how a critical questioning of technology cannot be carried out as disjointed with anything around it. Already in the introduction of her book, Shosana Zuboff intends to unmistakably remark that her work must be approached without any reductive bias concerning technological complexity. Not only discarding malpractices or unethical approaches with the excuse that they are merely technical and necessary trade-offs defeats the very purpose the FSF stand for, but it fosters a dull and limited approach to technological development.
+
+Indeed, Zuboff shares the theoretical imperative to be followed by conducting sociological research concerning technology.
+
+\begin{quote}
+We cannot evaluate the current trajectory of information civilization without a clear appreciation that \uline{technology is not and never can be a thing in itself}, isolated from economics and society. This means that \uline{technological inevitability does not exist}.
+\end{quote}
+
+In Zuboff words echoes the deeper ontological analysis carried out in The Question Concerning Technology by Martin Heidegger in 1954. Heidegger starts its study by recognizing that older as well as modern technologies, regardless of their complexity, are together ``means to an end'', and a ``human activity''. He argues that albeit those two definitions are the correct ``instrumental and anthropological definition of technology'' they are not completely true. Truth, in Heidegger's philosophy, lies in the Being, an entity concealed to humans and to their understanding. Therefore, it is necessary to go deeper in questioning technology and its causality, in order to investigate its essence. Specifically, Heidegger warns that the essence of technology does not correspond to technology. That is, engineering devices, calculus, as well as anything that \emph{instrumentally} makes technology, they all radically differ from what its true essence is. Consequently, mastering technology as an \emph{instrumentum}, hence from a merely scientific and technical point view, offers no value to the more profound analysis, aimed at questioning its direction, choosing its orientation, and influencing its purpose. As Zuboff does, Heidegger too remarks:
+
+\begin{quote}
+we are delivered over to it {[}technology{]} in the worst possible way when we regard it as something neutral; for this conception of it, to which today we particularly like to do homage, makes us utterly blind to the essence of technology.
+\end{quote}
+
+Stemming from this reflection, it emerges how since the original sin we got used to an Internet of which the essence remained widely practically undoubted, and with its ends determined by market dynamics poisoned with western individualism. What is worse, is that little non-profit organizations try to contrast this tendency by carrying out genuinely positive endeavors, easily get crushed by giant tech corporations, or they remain so niche that their impact often remains relatively irrelevant.
+
+I argue that the only possible way to break such toxic vicious circle is for social and political scientists as well as philosophers to question the grounds upon which innovations are being developed, and critically investigate technological novelties before they come into play, and not after.
+
+\hypertarget{case-study-hong-kongs-umbrella-movement}{%
+\chapter{Case study: Hong Kong's Umbrella Movement}\label{case-study-hong-kongs-umbrella-movement}}
+
+Many are the potential cases to be studied as more or less blatant and more or less direct consequences of surveillance capitalism. Nevertheless, some narrations fall more easily than others into a blind and reductionist rhetoric.
+
+The case of the Umbrella Movement---and of the Hong Kong protests more broadly---is a great example of a political movement for rights and freedom with respect to which social media were (and still are) widely seen as positive and even quintessential tools. According to public opinion and to the perspective of most scholars, social media were vital to make the voice of Hong Kongers heard, to allow them to regroup, and to acquire a critical, uncontrollable, mass. On the other hand, I see this phenomenon as a textbook interpretation that limits the role of social media to mere tools, hence to wonderful and admirable \emph{instrumenta} with inconsequential drawbacks. It is not so: by focusing on some disregarded particulars of Hong Kong's and its protests' history, some interesting contradictions emerge.
+
+\hypertarget{the-political-context-hong-kongs-strive-for-democracy}{%
+\section{The political context: Hong Kong's strive for democracy}\label{the-political-context-hong-kongs-strive-for-democracy}}
+
+Even before its conversion from a British colony to a special Chinese province in 1997, Hong Kong always demonstrated to be troublesome for the Chinese People's Party (CPP) {(So 2011)}. Be it because of its legacy of more than a century of western colonization, or because of its flourishing market luring capitalists from every continent, the province has a critical relevance in the international scenario, and it is very attentively looked upon. Nevertheless, regardless of the widespread skepticism {(Chan and Lin 2008)} and the difficulties posed by the 2003 SARS epidemic, the Chinese government proved its good intentions by quite rigorously observing the ``One Country, Two Systems'' policy for its first decade. According to such arrangement, the province became part of the country both de-facto and officially, but only as a Special Administrative Region (SAR), thus preserving a wide autonomy.
+
+After a rather peaceful political honeymoon, already in 2008 scholars voiced the perception of a growing intention by China of tightening the grip on Hong Kong, manifesting a trend that culminated on the 10 June 2014, when China's State Council issued for the first time a white paper on the Hong Kong issue, which officially proclaimed the central government to have ``plenary power to govern Hong Kong''. Following the white paper, on 31 August 2014, the NPCSC issued a decision (commonly known as the 831 decision), which laid down a highly restrictive and conservative scheme for the 2017 election of the Chief Executive and practically barred all opposition candidates from running for that position {(Zhu 2019)}. The white paper and the 831 decision were fiercely criticized by many Hong Kong academics and activists for trampling on the Basic Law and the 1984 SinoBritish Joint Declaration. This ultimately triggered the Occupy Central with Love and Peace (OCLP) movement and the rise of pro-independence activism, following the thread of the international Occupy movement. Soon joined and supported by many student associations---first among them the Hong Kong Federation of Students (HKFS)---their chief purpose was guaranteeing actual universal suffrage and fair democratic rule {(\emph{{OCLP Manifesto}} 2014)}. These efforts failed to pressure Beijing into making any concessions on democratic reform. In response, more radicalized pro-independence activism emerged, significantly changing Hong Kong's political and legal dynamics: while leaving to the Hong Kong judiciary the handling of OCLP-related cases, the central government took a much tougher stance toward pro-independence activists and has aggressively and controversially used the law as a potent arsenal to prevent pro-independence activists from entering formal political institutions and from gathering further political momentum.
+
+This first round of protests, also named as Umbrella Movement, possessed a set of particularly striking qualities, sharply conditioned by the means and features provided by a growingly present and influencing medium: social networks.
+
+\hypertarget{puppeting-emotions-social-media-as-a-political-actor}{%
+\section{Puppeting emotions: social media as a political actor}\label{puppeting-emotions-social-media-as-a-political-actor}}
+
+In light of the 2014 protests, which brought tens of thousands of people into the streets, the majority of academic literature focused on the positive and resourceful features of social media used in relation to the protests. Bluntly, social networks offered an entirely novel interconnection capability, better logistical coordination among peers, and faster and more persuasive information spreading {(Vromen, Xenos, and Loader 2015)}. On the other hand, several scholars brought to light some greatly overlooked, deeper and more complex issues such platforms cause, demonstrating how this stark mutation in the way mass movements relate to media platforms actively conditions the political debate, exacerbating and contaminating it with any kind of strong emotion.
+
+Firstly, the unprecedented intertwining and overlapping of private and public identity and behavior yielded and yields a social perspective and action of confused boundaries and attributes. The most prominent example of all is the portrait of Alex Chow and Lester Shum, two of the most celebrated faces of the movement, joint together in ``Alexter'', an actually false yet mediatically powerful romance of the two friends fighting for a common cause. Naturally, the fanbase's affection towards the two figures was not at all at odds with the political fight the public followed them for, but rather the two fueled each other {(Pang 2017)}.
+
+We could observe this from the perspective of the Weberian theory of charismatic leadership {(Weber 1922)}, evolved and applied to XXI century communication phenomena: the HKFS case shows how public activists allowed their intimacy to be violated (whether willingly or not is outside the scope of this thesis) to accrue a greater power to their public role. The sexualization of their relations proves affection and romance to be the ultimate emotional persuasion tool, (more or less consciously) weaponized to put forward a political message. At the same time, the channeling of a political message in a popular innocent romantic gossip became a way to bypass censorship, as the Alexter chatter landed on Baidu Tieba, the largest Chinese communication platform. As ``romance and revolution always coexist'', social media algorithms leveraged these feelings to enhance interaction and blurred the distinction among them {(Roio 2018)}.
+
+Secondly, as brought to light by a series of interviews on the topic, conducted by T. Chu and T.E.D. Yeo, and addressed to young 19-25 activists directly involved in the protests, the greater the debate on social media, the bigger the feeling of uneventfulness and inconsequentiality of the matter addressed. The need to protest on the street stemmed out of strive of abandoning a virtual world where, in the end ``it is not possible to change others' political views and beliefs overnight unless something extremely important or ridiculous happens''. Relentlessly, the spike in validation and engagement that mainstream social media are designed to encourage {(Gainsbury et al. 2016)} ended up causing more damage than good, and eventually leading to the disconnection of their main figures.
+
+\begin{quote}
+Instead of facilitating meaningful interactions and the exchange of political knowledge, participants {[}to the research{]} expressed that discussing politics online would be more likely to fuel arguments and animosities. {[}\ldots{]} Recognizing that social media do not foster an ideal public sphere, these politically inclined youths adopted some disconnective practices vis-à-vis the polarizing and fractious political talk on social media.
+\end{quote}
+
+Lastly, the examples above are two among many distortions that social media cause in terms of socio-political but also cultural interaction, all placed within a broader framework that transforms them from a merely practical communication tool to an active agent, part of the debate:
+
+\begin{quote}
+According to contemporary practice theory, the utility and uptake of ICTs depend on ``the site of the social'' that is the ``immense mesh of practices and orders'' (Schatzki, 2002, p.~155) in which people, artifacts, organisms, and things are interconnected through practices. Rather than isolated technological events, the enactment and evolvement of ICT uses occur within a bundle of social practices and cultural orders and are shaped by the diverse nonmedia activities connected to these sites in the complex web of practices (Orlikowski, 2000). In this view, activist digital media usages involve an array of different elements such as ``forms of bodily activities, forms of mental activities, `things' and their use, a background knowledge in the form of understanding, know how, states of emotion and motivational knowledge'' (Reckwitz, 2002, p.~250). Notably, these include not only the cognitive and rational elements, such as digital knowledge, but also noncognitive and embodied elements such as the style, desires, preferences, and affect attached to the objects and artifacts of digitally enabled practices (Gherardi, 2009; Reckwitze, 2002).
+\end{quote}
+
+As a matter of fact, yet another hidden but determining difference of social media with respect to any other communication platform is its restless obtrusiveness into the daily and mundane: rather than a one-time boundary-crossing from the private to the public driven by more effective and efficient Information and Communication Technologies (ICT), digital media usages should be regarded as ongoing movements by which today's networked individuals simultaneously exploit and rework their daily activities and orientations in real-world encounters {(Ting 2019)}.
+
+\hypertarget{becoming-water-protests-decentralization-and-repression}{%
+\section{Becoming water: protests' decentralization and repression}\label{becoming-water-protests-decentralization-and-repression}}
+
+After a gradual dissolution of the occupations and protests, completely terminated in December 2014, the proposal of introducing the ``Fugitive Offenders and Mutual Legal Assistance in Criminal Matters Legislation (Amendment) Bill'' (Extradition Bill) in March 2019 generated the spark that torched a new wave of intense protests.
+
+The bill was introduced by the Hong Kong Special Administrative Region (SAR) aimed at legalizing the extradition of Hong Kong residents to mainland China for trial of the government provoked protests among the pro-democracy part of the Hong Kong population. The extradition bill provoked fears that the province might lose its autonomy. Hong Kongers relied on the juridical independence guaranteed in article 4 of Honk Kong's Basic Law promising to ``safeguard the rights and freedoms of the residents of the Hong Kong Special Administrative Region and of other persons in the Region in accordance with law'' {(Mayberry 2019)}. Enacting the draft would mean depriving people of their security, leaving power to non-democratic bureaucrats subject to pressure from Beijing, therefore making it a big step backwards from the original strive towards democracy {(Council 2020)}.
+
+Despite brutal repression by the security forces of China and Hong Kong, the number of demonstrators steadily grew. Supporters of the CCP and Chinese authorities profited of the chaos to spread disinformation via social media in order to suppress and slander protesters. This targeted dissemination of falsehood served the purpose of legitimizing violent police behavior as well as the drastic decisions took by both the CCP and SAR authorities, approaching their long-term goal of ensuring the subordination of Hong Kong to the Chinese party-state and create a pro-China sentiment.
+
+From this behavior, common and shared with autocracies repressions, certain patterns and characteristics can be pinpointed with respect to CPP's usage of social media.
+
+Besides Telegram, which already proved to be a useful platform in the previous protests in 2014 for coordinating demonstrations by alerting each other about police activity, the use of western social platforms was only possible due to the Hong Kong's exclusion from ``the Great Firewall'', the Chinese grip on the internet, permitting censorship and content filtering from the government. However, China took advantage of such freedom: the CCP used accounts, pages, and channels masquerading as Hong Kong independent sources, spreading disinformation. The narrative portrayed in this chapter shows how social media allows a great pervasiveness not only in advantage of protesters, but also of autocratic institutions. While (independent) and foreign journalists attempted to demonstrate the disproportionate violence of Hong Kong police officers on the protests {(Luqiu and Lu 2021)}, the CCP government has instead depicted any law enforcer as strong defender of the country's dignity and sovereignty. Chinese outlets conceived tales of heroic policemen who, even injured, fought for the peace of their country, and defended Hong Kong against the danger represented by protests. Furthermore, state media journalists were innocent victims of dissident violence {(Council 2020)}.
+
+To face such fierce repression, the protests acquired a flawless, decentralized, faceless, and ``liquid'' logistical setting, which brought the movement to occupy an immense amount of locations, still without being connected to any specific leader or any prominent individual, as it happened in 2014 instead. The riots' mantra was ``be water'': instead of camping out in finite areas, this time, networked protesters sought to rise up simultaneously in multiple locations without lingering too long in any one area.
+
+It is quite interesting to note a peculiar metaphorical similarity between the Internet's ``success'' and the positive outcome of Hong Kong's protests. The brittleness of a centralized and hierarchical technologies appears to be mirroring the inconsequentiality and mediatic degeneration of a socio-political structure following the one of Weber's charismatic leadership. On the other hand, as the last chapter is going to show, the power of decentralized networks may be associated to the effectiveness of a liquid, flexible and horizontal social movement, be it formed by a tight community fighting for political aims, be it for a wider set of citizens in larger environments.
+
+In conclusion of this chapter, I will be focusing exactly on the value of social communities against this background, by analyzing a read in relation to Hannah Arendt's political philosophy.
+
+\hypertarget{an-interpretation-in-terms-hannah-arendts-philosophy}{%
+\section{An interpretation in terms Hannah Arendt's philosophy}\label{an-interpretation-in-terms-hannah-arendts-philosophy}}
+
+Whatever the position and the authenticity of the message intended to be conveyed, the last decade of protests in the province of Hong Kong highlights a loud and heavy use of social media, to a point that it has been argued that the true battlefield was the virtual one {(Lih 2014)}, as it happens to be in the vast majority of cases today. Still, by exploring different but linked instances within this case study, we were able to demonstrate that such a ``battlefield''~is in no way a static and neutral arena within which debates are carried out.
+
+Indeed, this case study offers a great opportunity to exploit the events of the \emph{Umbrella Movement} with the goal of framing the nature of digital social networks in light of Hannah Arendt's political philosophy, in particular by studying the arguments made in The Human Condition. According to Arendt, the private is the domain of the necessity, within which the individual is constrained by and to the economical and physical imperatives that essentially ensure the maintenance of life. On the other hand, the public sphere is the space within which a person is freed from their necessities, thus free to engage in public debates for the common good. Because of its rigidly hierarchical nature, the private domain must be attentively guarded from invading the public. Arendt sustains that modernity fosters the expansion of a social sphere, sitting between the private and the public one, that allows a worrisome contamination of the latter by the former {(Arendt 2018)}.
+
+In Retheorizing the Social, the role of the social realm as intermediary between the private and the public realms is interpreted by Laikwan Pang as an interesting phenomenon to be linked with how social media emphasize users' engagement and their interaction with political matters. His attention primarily targets an unique quality of social networks: that of being able to contemporaneously both promote participatory democracy and encourage self-enclosure.
+
+\begin{quote}
+While social media has been making recent political movements more effective, the tendency of atomization is also strengthened by the current business environment, dominated by monopolies and consumerism.
+\end{quote}
+
+Associated with the argument that modern society develops ``conforming'' rather than ``agonal'' relationships, the concern expressed by Arendt and voiced by Pang must be inserted in the broader question addressed in this thesis: the determining role played by technology in actively shape and accelerate already existing trends. It is in these terms that I would direct the further---deeper---research Pang acknowledges to be done.
+
+\begin{quote}
+I think we can further explore whether the social, both in social media and in social movement, can be practiced as a space of dense human embodiments and interactions where politics can be reinvigorated.
+\end{quote}
+
+One fundamental statement could be drawn as a conclusion of the reasoning that accompanied this case study: social networks are an active, partial, and distorting agent that has to be taken into account at least as a participatory political actor.
+
+\hypertarget{where-the-current-internet-fails}{%
+\chapter{Where the current Internet fails}\label{where-the-current-internet-fails}}
+
+The original sin of the Internet could be traced back to the unhindered liberty that is intrinsic in its architecture. From a merely technical point of view, nobody requires a permission from anyone in order to publish a website. The same goes for connecting to one of the infinitely many servers which compose this immense and ubiquitous entity we call the Internet. As already theorized by {(Huberman and Adamic 1999)}, its structure by design enforces a ``power law'' describing how the few websites which have a great number of pages grow at an almost exponential rate, while the others are left out in the cold.
+
+The first chapter proved historically that the nature of the internet is decentralized---it is not anyone's property, and any actor is free to openly take part to it (both passively and actively). However, as I have showed, there are some for-profit entities that are monopolizing its traffic and becoming the principal source and destination of virtually all online activities.
+
+As analyzed by {(Bahri, Carminati, and Ferrari 2018)}, ``logical centralization'' consists in the ``unprecedented massive and uncontrolled collection and aggregation of different types of data about millions of individuals, from across all areas of the globe, in the hands of a few centralized entities''. This results in what {(Reviglio and Agosti 2020)} call a ``control asymmetry'':
+
+\begin{quote}
+A small group of platforms---above all Google, YouTube, Twitter and Facebook---act as the ultimate gatekeepers for billions of users worldwide. They provide a personalized experience, but little individual or group user control over information filtering processes.
+\end{quote}
+
+Therefore, the core problem of centralization can be reduced to the fact that not only the ownership, but also the control and the management of Online Social Networks (OSNs) is concentrated in the hands of few corporations. Their practices become the \emph{conditio sine equa non} for smaller entities on the Web.
+
+The Web is undeniably experiencing a drastic growth, which nevertheless appears to be uneven. Do efforts towards decentralization help to achieve more fairness? Why should a more technical matter come before regulation? In chapter five I am arguing that, when an immense amount of power is wielded by very few supranational for-profits, struggle to curb their influence through regulation is in vain if not backed by more technically oriented propositions, specifically pushing towards decentralization.
+
+\hypertarget{algorithms-as-black-boxes}{%
+\section{Algorithms as ``Black-Boxes''}\label{algorithms-as-black-boxes}}
+
+Mark Zuckerberg, the CEO of Meta (\href{https://about.fb.com/news/2021/10/facebook-company-is-now-meta/}{formerly known as Facebook}), reportedly stated {(Edelman 2021)} that his company's algorithms are built to foster ``meaningful social interactions'', while critics rage in claiming that the firm's main (or only) purpose is to maximize engagement, thus profitability. Regardless of the opinions and speculations by scholars and by the public, the worrying point does not originate in how the software is used, but---again---in (at least) understanding how it is built. Let alone the thorny issue of algorithms potentially overlooking the user's well-being, we should start by acknowledging that there is no way for anyone outside the companies owning mainstream OSNs to even know \emph{how} those algorithms work.
+
+Personalization is the primary scope of the algorithms that decide what to show first in a ``feed''. A question insistently posed but remaining still unsolved is: what are the criteria according to which such evaluation is carried out? The ultimate purpose is interpreted as ``pursuing the logic of market segmentation until each individual user is reduced to a unique market'' {(Yeung 2018)} yet ``this process occurs largely beyond the control of users as it is based on implicit personalization---behavioral data collected from subconscious activity---rather than on deliberate and expressed preferences'' {(Reviglio and Agosti 2020)} According to the authors, research on personalization is contradictory and ambiguous, hence not completely reliable. Unless and until more details will be provided by companies, it will continue to be tremendously hard to draw conclusions and scientifically assess the situation.
+
+The most straightforward, yet ineffective, measure taken in this direction by ``Big Tech'' is to enact a superficial transparency, by overwhelming new subscribers with thousands of obscure sentences in strictly technical language. Labeling them as ``Terms of use'', or, alternatively, providing extremely oversimplified and trivial summaries, means everything and nothing at the same time. Instead of clarifying how OSNs work and how their owners operate, Terms of use confuse and disorient the user. It is widespread common knowledge that, in the end, only a tiny fraction of people actually reads them before ticking on the box to accept them. Furthermore, explaining how data is collected, in very broad terms, how platforms work does not mean giving users an \emph{actual} choice. The so flaunted and acclaimed transparency eventually turns out to be ``the perfect cover-up'' {(Hoepman 2018)}. To curb this issue and try and minimize its damages, a collective of volunteers and activists in 2012 founded and still maintains \href{https://tosdr.org/en/about}{Terms of Service; Didn't Read}, a service aimed at addressing the problem of over-complicated Terms of Service by providing simpler explanations and clarifications about which users' rights are not respected.
+
+Ultimately, it appears self-evident that ``it is very difficult to establish alternatives that question the very principles on which the current business model and its perverse consequences exist'', nevertheless it is crucial for personalization algorithms' scope to mutate from ``a form of legitimate hedonistic subjugation'' to ``an opportunity for new forms of individual liberation and social awareness'' {(Reviglio and Agosti 2020)}.
+
+As long as OSN platforms will keep retaining to their own evaluation and self-regulation tools and instructions to access the heart of the machine learning driving their infrastructures, nobody will be able to improve the long-term trend.
+
+\hypertarget{proprietary-software}{%
+\section{Proprietary software}\label{proprietary-software}}
+
+Despite {(Roio 2018)} argues that ````openness'' and ``transparency'' are not sufficient conditions to realize the good ethical propositions of the free software movement'', it must be noted that they may not be enough, but they are arguably necessary. In the scenario under analysis, we are dealing with software whose functioning, even if thoroughly explained, may still not actually exactly correspond to what its source code instructs it to do.
+
+Every program run and used without allowing the public to access the source code is defined as ``proprietary software''. Although intuitively it may not seem so, secrecy concerning the code does not simply correspond to rightful ownership of programs, and it does not automatically guarantee fair competition. As {(Stachwell 2005)} points out, ``open source efforts most often held up as examples of how peer production can prosper in the modern information economy have succeeded in spite of, rather than because of, contemporary intellectual property controls.''.
+
+The true obstacle, rather than limit, represented by proprietary (``close-sourced'') software is strictly intertwined with the topic analyzed in the previous section: it profoundly limits ``auditing'', hence thoroughly exploring and understanding the low-level backbone upon which platforms are built. Auditing can happen anyways, but it is bound to remain ``indirect'' {(Adler et al. 2016)}.
+
+``GAFAM'' (Google, Amazon, Facebook, Apple, Microsoft) profusely proclaim their \href{https://pulse.microsoft.com/nl-nl/transform-nl-nl/na/fa1-microsoft-loves-open-source}{``love''} for open source, supporting independent projects and even developing widely used tools that are open source themselves (among many others, Google's \href{https://go.dev}{Go} and Apple's \href{https://developer.apple.com/swift/\#open-source}{Swift} programming languages, Facebook's \href{https://reactjs.org}{React framework}), hence proving commitment is not a purely formal good will parade. Nevertheless, the trend appears to be recurring, and the problem is tackled only superficially: what is open source are the ``extras'', distracting more technically-oriented communities, such as independent developers, who are provided for free with appealing feature-packed cutting edge technology for free.
+
+In this case, too, centralization plays a major detrimental role: if there is only one entity possessing the source code of a program, I am the only one that can run it, and---necessarily---the sole provider. Richard Stallman's fears during the '80s found a troubling confirmation during the following decades.
+
+\hypertarget{surveillance-capitalism-once-again}{%
+\section{Surveillance Capitalism, once again}\label{surveillance-capitalism-once-again}}
+
+All of the topics under scrutiny up to this point converge to an effect of very broad scope and influence, with deep socio-economical roots. By inventing the term ``Surveillance Capitalism'', Dr.~Shoshana Zuboff brought a new, watershed perspective to OSNs capitalization and its effects on society.
+
+Even before publishing the œuvre the second chapter focuses on, in 2015 Zuboff observed computer devices as entities whose mediation becomes crucial in order for humans not only to communicate, but also to work and perform most of their daily activities {(Zuboff 2015)}. Nonetheless, computers are not passive, and their operating systems, as well as programs they run, are programmed to accumulate data. Such extensive and comprehensive amount of information does not quietly rest undisturbed in the memory of every device, but it is processed and analyzed. In a vicious circle, the more users provide information, the easier it is for algorithms to group them according to their interests, and shows them the advertisement that suits them the most {(Mosco 2018)}.
+
+This process happens perpetually under the hood, concealed by a fancy design and edulcorated graphics full of pictures and content which aims at stimulating the user and gluing her/him to the screen, no matter if the content is violent or too strong for her/his eyes {(Gainsbury et al. 2016)}. What is worse, is that user profilation achieved a level as advanced as no mass media before, and it follows that advertisements and even political manipulation can happen with unprecedented effectiveness.
+
+At the end of her 2015 work Dr.~Zuboff summarizes her conclusions with so wonderfully to appear profoundly worrying indeed:
+
+\begin{quote}
+New monetization opportunities are thus associated with a new global architecture of data capture and analysis that produces rewards and punishments aimed at modifying and commoditizing behavior for profit. {[}\ldots{]} Structural asymmetries of knowledge and rights made it impossible for people to learn about these practices. {[}\ldots{]} These developments became the basis for a fully institutionalized new logic of accumulation that I have called surveillance capitalism. In this new regime, a global architecture of computer mediation turns the electronic text of the bounded organization into an intelligent world-spanning organism that I call Big Other. {[}\ldots{]}
+\end{quote}
+
+It is impossible to keep ourselves from wondering how the ``Big Other'''s power could be stopped, contained, or---at least---avoided. In my opinion, the most effective solution, again, is not in trying to politically reform or regulate Internet monopolies as they currently are. The only way to achieve a long-term stability which does not have to be kept from degenerating is to educate users and empower them so that they will be able to see the best in healthier and better alternatives to centralized OSNs.
+
+The final chapter of this thesis shows that such alternatives exist.
+
+\hypertarget{the-case-of-truth-social}{%
+\section{The case of Truth Social}\label{the-case-of-truth-social}}
+
+The chief display of the relevance centralized OSNs monopolies exert can be found in their relation with Donald Trump, former president of the United States of America.
+
+After Mr.~Trump repeated aggressive behavior and spread of misinformation through social media platforms during his presidency {(Nacos, Shapiro, and Bloch-Elkon 2020)}, he was eventually permanently banned or temporarily suspended from all major social media platforms, by the end of February 2021. The counter-attack by the American billionaire has been to announce to open his own platform, named \href{https://truthsocial.com}{Truth Social}.
+
+With a great surprise of the Free Software community, Truth Social appeared to be based on the most common and known open source alternative social media platform, \href{https://joinmastodon.org}{Mastodon}. Glossing over the many speculations concerning Trump's awareness of the value of the choice to base his platform on an open one, this is a master proof of the merit that a software that can easily be copied and modified has.
+
+Nonetheless, \href{https://www.tmtgcorp.com/}{Trump Media \& Technology Group} (TMTG) underestimated one little but ineludible detail: Mastodon's \href{https://www.gnu.org/licenses/agpl-3.0.en.html}{GNU Affero General Public License}, according to whose deed it is possible to copy and modify the source code of the original program as long as the source code of its by-products stays open, too. As of October 23\textsuperscript{rd} 2021, \href{https://github.com/mastodon/mastodon}{Mastodon source code} was open, while Truth Social one was not. Once Eugen Rochko, Mastodon founder and current maintainer, realized there was something off, he filed a \href{https://blog.joinmastodon.org/2021/10/trumps-new-social-media-platform-found-using-mastodon-code/}{complaint} to TMTG, forcing it to make Truth Social's source public. On November 12\textsuperscript{th} 2021 Trump's platform code was made open, with a bold ``Our goal is to support the open source community no matter what your political beliefs are'' on \href{https://truthsocial.com/open-source}{the page that displays it}.
+
+One might consider the resolution of this case a triumph of open source advocates, or read it as a great contradiction of a powerful and capable Company bending to some legal quibble, but without any argument this proves the rising relevance of the open source movement and its ever improving software.
+
+\hypertarget{turning-the-origins-upside-down}{%
+\section{Turning the origins upside down}\label{turning-the-origins-upside-down}}
+
+The points for the degeneration of the Internet as it is nowadays, presented in this and in the second chapter, are only what I believe to be the most relevant and worrying problems of many. Sketching a general picture of the current Internet, as opposed to the list at the end of chapter one, the current framework of the digital world could be ascribed to the following key characteristics:
+
+\begin{itemize}
+\tightlist
+\item
+  a widespread \emph{blind reliance} on digital telecommunication tools by non-experts;
+\item
+  \ldots that compose appealing and \emph{intuitive} platforms, nicely and masterfully simplified by exploiting\ldots{}
+\item
+  \ldots a strong and almost unavoidable \emph{centralization} carried out by monopolistic \emph{profit-driven} companies;
+\item
+  an inescapable \emph{competition}-driven business, inherited by the deeply capitalist culture the dot com bubble represented;
+\item
+  as with anything inscribed within a capitalist economic system, technological innovation is carried out in parallel by the isolated silos that are the different companies potentially working on the same project, and competing to overcome the others rather than join forces with the common purpose of providing the best service possible;
+\item
+  interconnection opportunity is functional and subordinate to the monetization and the general profitability of digital devices;
+\item
+  Computer Sciences and the Internet are not merely strongly tied with finance, but they are directly dominated by the market, and their principles are more financial ones rather than technological and human ones.
+\end{itemize}
+
+This list blatantly represent how finance-driven digital development was able to completely defeat Baran’s original thought, and even make it the opposite.
+
+Now it is time to change these points once again.
+
+\hypertarget{a-better-internet}{%
+\chapter{A better Internet}\label{a-better-internet}}
+
+The debate concerning the juxtaposition of ``what is'' with respect to ``what ought to be'' is at the core of virtually any philosophical argumentation attempting to harmonize ontological and phenomenological studies with normative theory {(Black 1964)}, and this endeavor dates back to Hume's questioning of causality {(Cohon 2004)}. The same problem applies to the Internet, with the determining difference that the layers of complexity characterizing it are so thick and so recent that academic literature struggles to effectively go deep enough {(Reviglio and Agosti 2020)}.
+
+So far, this thesis focused on ``what is'': I attempted to sketch a broad critical outlook of the determinant factors shaping the Internet as it is today. I hope I shed a light on how the way the Internet currently works is the result of an extremely complex and still vastly unexplored path. Reducing it to a blindly deterministic perspective defeats any possibility to change the Internet for the better.
+
+Literally encoded in the Internet there are many apparently insurmountable problems, be them clamorous or concealed. For this reason, after absorbing some essential notions from the historical and conceptual roots of the Internet, it is now possible to envision and to build a new not-so-new way for the digital world to work. In this second part of my thesis, I am shifting the focus on what the Internet ``ought to be''.
+
+\hypertarget{the-method-philosophy-in-science}{%
+\section{\texorpdfstring{The method: Philosophy \emph{in} Science}{The method: Philosophy in Science}}\label{the-method-philosophy-in-science}}
+
+Before developing any conceptual argument, it is critical to highlight the key significance of using the right philosophical method. By conducting a strictly observational and empirical analysis of the Internet, specifically if in historical terms, I might argue that so far I practiced Philosophy ``on'' Science. Therefore, I brought forward a critic that operates as external with respect to the technical processes and attributes that characterize the Internet, namely the code that compose it, the infrastructure it runs on, the individuals and the corporations building it.
+
+Instead, in order to advance new proposals concerning the Internet, it is not sufficient to \emph{address} technical aspects, but to \emph{understand} current technology in order to formalize a normative theory not merely based on speculation. In other terms, the aim is to exploit philosophical tools and philosophical reasoning in order to produce scientific knowledge.
+
+This method has been labeled as ``Philosophy \emph{of} Science'', and it is proven to be ``a quantitatively substantial trend within philosophy of science, demonstrating the existence of a methodological continuity from science to philosophy of science'' {(Pradeu et al. 2021)}.
+
+The normative proposal that follows does not use any sort of Computer Sciences device or tool, but rather it exploits a philosophical method to dive into a comprehensive understanding and development of potential viable alternatives to the status quo. Indeed, Philosophy in Science in practice ``is dedicated to fostering the pursuit of a philosophy of science that considers theory, practice and the world simultaneously, and never in isolation from each other'' {(Ankeny et al. 2011)}.
+
+By reading Philosophy in Science: Can Philosophers of Science Permeate through Science and Produce Scientific Knowledge?, it is curious to notice that the word ``computer'' is used 19 times, whereas the word ``medicine'' or its derivatives (e.g.~``medical'') is used more than twice as much: 40 times. Such limited and superficial datum is a good indicator of what I argue to be a wider and more complex problem: that of firstly considering Philosophy in relation to Science as something concerning bioethics and medicine, or concerning the most abstract and complex theories in Physics or Mathematics. My supposition is that, since it exists, research on the afore-mentioned subjects has been a necessary, essential, and intuitive practice for human survival, whereas, since the original sin, Computer Sciences have been seen as mere tools to accomplish tasks unrelated to Information Technology itself. I argue that a cultural and philosophical orientation is instead an endogenous quality of digital technology, if not the most relevant, for sure the most disregarded.
+
+The worrisome scarcity of critical analyses of Information Technology questioning the core elements and rules determining it must be addressed by advancing theoretical models that do not consider a strictly economical viability, but that envision instead technologically attainable solutions that could increase efficiency, and the respect human rights. Such solutions do not exist simply because they are not ``convenient'' or because they are not as intuitive as widespread technological practices, but they are equally, if not more, effective.
+
+What is great about Computer Science is that there is no need to consider the possibility of creating something, because anything could be created by simply coding it. Keeping this in mind, Computer Sciences are arguably the best device to accomplish what is considered impossible in the real world. Information Technology is what takes utopias out of the domain of philosophical theory and brings it into the real world.
+
+\hypertarget{using-technology-to-pursue-utopias}{%
+\section{Using technology to pursue utopias}\label{using-technology-to-pursue-utopias}}
+
+Legend has it that, while walking on the iconic San Francisco bridge, MIT student Brewster Khale was chatting with a friend about technology and the future. At some point, the dialogue got to a question that would change Brewster's life.
+
+``Brewster, do you consider yourself a Utopian?''\\
+``I would say that I am, yes.''\\
+``And you are a Computer Sciences student, aren't you?''\\
+``Indeed, I am.''\\
+``So, \textbf{why don't you use information technology to make utopias come true?}''
+
+The point raised by his friend stuck with young Khale. In 1989, he created the Internet's first publishing system called Wide Area Information Server (WAIS), later selling the company to AOL. In 1996, Kahle co-founded Alexa Internet, which helps catalog the Web, selling it to Amazon.com in 1999. Brewster Khale pursued these endeavors to accrue enough capital to realize his utopic aim: gathering and collecting all of human knowledge and making it open, free, available for all {({``Internet {Archive}: {Bios}''} n.d.)}.
+
+Finally, in 1996 he founded \href{https://archive.org}{The Internet Archive}. It now preserves 99+ petabytes of data---41 million books and texts, 735 billion web pages, plus music, television, and software of global cultural heritage, working with more than 400 library and university partners to create a digital library, accessible to all.
+
+Brewster Khale's story crosses path with the one of another activist of digital rights, possibly one of the most inspiring icons of the history of the Web: Aaron Swartz. His story is a stark, majestic, but terribly sad example of how brilliance and motivation going beyond profit-making find little room in the tech industry.
+
+Since the age of 12, young Swartz was committed and active in many different domains of the Internet, but always with the recurring intention of building decentralized, open and respectful technologies {(Knappenberger 2014)}. While his brief time at Stanford University, he co-founded Reddit, one of the most important mainstream social networks to date. After selling it to Condé Nast for one million dollars, he could not work in that environment, since he felt a strong rejection and intolerance for profit-driven endeavors. In the words of his brother Ben:
+
+\begin{quote}
+The way Aaron always saw it is that programming is magic. You could accomplish these things that normal humans can't. So, if you have magical powers, would you use them for good or to make mountains of cash?
+\end{quote}
+
+Since the Internet's original sin, but more generally in a deeply liberal America, the common answer has often been the second one. Developing technologies for \emph{actual} good seemed, and still seems, tremendously hard. This did not stop Swartz in using is magical power, coding, to pursue his utopia. Among the astounding amount of projects he created or participated to, he co-created with the Internet Archive \href{https://openlibrary.org}{the Open Library}, a digital catalog aimed at making easily searchable and retrievable any writing ever written, creating a literal library, but online. ``{[}\ldots{]}, a lofty but achievable goal'' {({``About {Us}; {Open Library}''} n.d.)}. In Brewster Khale's words, it was Aaron fight for open access to knowledge that ``got him in so much trouble\ldots{}''
+
+Aaron Swartz could not stand the idea of having millions of academic papers, containing the most advanced, and possibly vital, knowledge of planet Earth, jealously guarded in a walled garden whose access was possible only by paying enormous amounts of money. As a former student of MIT, he knew the university paid a subscription to all the major academic publishers' database in order to provide free and unlimited access, but only to people within the university network. Aaron found a hidden and remote janitors' closet inside an MIT building, where he plugged a computer scraping academic papers thanks to the MIT network, and saving them on a hard disk. Instead of waiting to catch Swartz in the act, authorities placed a hidden camera inside the closet, in order to make a case. There was now proof that Aaron was the owner of the laptop. The details of the prosecution and of Swartz's story are out of the scope of this thesis, but it is striking to know that, even before the trial date, Aaron Swartz committed suicide. The legal pressure was simply too much to bear for a young man in his 20s {(Martini 2018)}.
+
+Khale's and Swartz's stories are only two of the many struggles that fit in the broader plot of a world ever more pervaded with digital technologies, which are in turn dominated by finance and speculation. The specter of so-called ``monetization'' hunts all new ideas, regardless of how ethical and how human they are, and it kills them most of the time; when it does not, it warps their structure so that they can be profitable (see Swartz's Reddit). Acknowledging these hardships, though, does not mean that theorizing and pursuing utopias, as Brewster Khale did (and still does) is in vain. Recognizing the original sources from which technological bias is originated can be and should be the quintessential starting point for the conception and the enacting of better socio-political dynamics \emph{within} the Internet.
+
+\hypertarget{adversarial-interoperability}{%
+\section{Adversarial Interoperability}\label{adversarial-interoperability}}
+
+In Interoperability {(Wegner 1996)} defines the term as:
+
+\begin{quote}
+\ldots the ability of two or more software components to cooperate despite differences in language, interface, and execution platform. It is a scalable form of reusability, being concerned with the reuse of server resources by clients whose accessing mechanisms may be plug-incompatible with sockets of the server.
+\end{quote}
+
+In other words, interoperability makes different digital products or tools work together since they are designed to communicate among each other. In computer engineering, interoperability is defined through APIs, which stand for Application Programming Interfaces. APIs are developed and deployed by OSNs owners as conditions to allow or block access to their infrastructure, safeguarding their dominant exclusive position {(Bodle 2011)}. {(Milberry and Anderson 2009)} support this by sustaining that ``in their drive to enclose the Internet, online media companies develop \emph{synergistic membranes} with prescribed circuits that lead less and less to the global Web outside their online properties''.
+
+Interoperability is then sacrificed, or better, selectively enacted, in order to maintain control over competitors' possible interactions with one's own platforms. With the exception of some tools---such as Facebook's \href{https://ogp.me}{Open Graph Protocol}, which has now become a widespread standard for pre-fetching website metadata--- most APIs are intended to keep the user base gravitating around the service, never permanently leaving it.
+
+Always focusing on the world-famous Menlo Park company, {(Bodle 2011)} underscores:
+
+\begin{quote}
+Facebook's development and integration of Open APIs demonstrate a strategy of controlled openness, innovation, and dominance. Facebook utilizes Open APIs to provide valuable user data to developers and online partners in order to encourage the proliferation of social applications that ultimately harness inbound links from external sites and devices by redirecting traffic to Facebook's servers.
+\end{quote}
+
+This observation opens also to the topic of user's data collection: if the vast majority (if not the totality) of online services offers the possibility to log in via Facebook (or any other authentication provider with Open APIs), it paves the way to an internet where all the activities performed by one user are reported back to a central central profile on one platform, which becomes the only holder of an enormous amount of data for many different activities.
+
+In order to limit this behavior, which contributes to blow up OSNs traffic statistics also when users are visiting other websites, on the celebrated \href{https://eff.org}{Electronic Frontier Foundation} (EFF)'s blog, science fiction writer and open web activist Cory Doctorow proposes the term ``\href{https://www.eff.org/deeplinks/2019/10/adversarial-interoperability}{adversarial interoperability}'' as a value thriving in the original Web, and that should be restored today. The adjective ``Adversarial'' is associated to the above explained ``Interoperability'' to underscore how the latter should be possible without the company that delivers the APIs.\\
+A master example of Adversarial Interoperability today is email. If the email provider of the sender is different from the one of the receiver, the message goes through anyways. The reason is that the underlying technology is common and it is independent by the company offering email hosting; in order for me to send an email, my provider needs to comply to a technical, non governmental, standard which is independent from it {(Simpson 2016)}.
+
+Social media platforms should work like email. To post something, I should not be tied to the server or the platform I post from, and also who is not a subscriber could see what I published and interact with me. The current brand-focused development of technology make us believe that envisioning such a perspective is utopic, but we will see it is not.
+
+\hypertarget{algorithmic-sovereignty}{%
+\section{Algorithmic Sovereignty}\label{algorithmic-sovereignty}}
+
+What activists, regulators and users should in the first place be asking for is ``algorithmic sovereignty'', and pursue its achievement through ``user empowerment'' {(Reviglio and Agosti 2020)}.
+
+\begin{quote}
+First of all, and more obviously, there is a general need for ``academic literacy''. We can define it as the basic knowledge on how filtering mechanisms and design choices function and what their impact on one's own life is and may be.
+\end{quote}
+
+After a common, basic, yet fundamental understanding of how AI works is somehow assured to be provided to users, OSN providers should empower them by allowing each individual to arbitrarily decide what is important for her/him; personalization should be explicit, and {(Reviglio and Agosti 2020)} argue it should be so for political news in particular.
+
+Ultimately, it appears self-evident that ``it is very difficult to establish alternatives that question the very principles on which the current business model and its perverse consequences exist'', nevertheless it is crucial for personalization algorithms' scope to mutate from ``a form of legitimate hedonistic subjugation'' to ``an opportunity for new forms of individual liberation and social awareness'' {(Reviglio and Agosti 2020)}.
+
+As long as OSN platforms will keep retaining to their own evaluation and self-regulation tools and instructions to access the heart of the machine learning driving their infrastructures, nobody will be able to improve the long-term trend.
+
+\hypertarget{decentralized-social-media-the-fediverse}{%
+\section{Decentralized social media: the Fediverse}\label{decentralized-social-media-the-fediverse}}
+
+How are alternative social media different from the ones most of the world use?\\
+The key to the answer to these questions, once again, is found in the platforms' fundamental architecture. An alternative social media is any ``media production that challenges at least implicitly, actual concentrations of media power, whatever form those concentrations may take in different locations'' as {(Curran and Couldry 2003)} explain. More specifically, Alternative Online Social Media Networks do not have one single provider, one unique version, one gatekeeper deciding everything about it. Alternative microblogging platforms are very different between each other and their unique feature is precisely their diversity, which allows them to be connected nonetheless, thanks to a common technology.
+
+Alternative Online Social Networks (AOSNs) transforms deficits of mainstream platforms in points of strength, since by design they are conceived to solve what ruined their capital-driven predecessors.
+
+\begin{itemize}
+\tightlist
+\item
+  No algorithms are involved: the problem of algorithms opacity fades away since they are not exploited to process user-generated data. Posts are displayed chronologically
+\item
+  Open Source Software: no need to speculate on how things actually work. Transparency and replicability are chief.
+\item
+  Interoperability as the motto: AOSNs are based on the principle that there is no main character involved in their deployment. No central processing unit exists, while the value of the social interactions they foster strictly depends by their swarm-like architecture.
+\item
+  No gain, no pain: by design, there is no prospect of profitability for what concerns AOSNs. Although there are exceptions regarding new surging blockchain-based networks {(Guidi et al. 2018)}, AOSNs are community-driven, and their business model is decided by the administrator of every single server, even though it is often donations collection.
+\end{itemize}
+
+By putting all of the above points together, we get what is commonly called the Fediverse, an abbreviation standing for federated universe {(Reviglio and Agosti 2020)}. The most diffused protocol upon which the Fediverse works is \href{https://activitypub.rocks}{ActivityPub}, which fully incarnates the fundamental values of adversarial interoperability: it is \href{https://www.w3.org/TR/activitypub/}{developed} by the \href{https://www.w3.org}{World Wide Web Consortium}, the entity created by Tim Berners-Lee that is not linked to any specific company or government. Nevertheless, there are other several relevant technologies, such as \href{https://mit.edu}{MIT}'s \href{https://solidproject.org}{Solid}, led by Tim Berners Lee.
+
+From those common and open source specifications, a considerable amount of independently or community developed projects was born, the main one being \href{https://joinmastodon.org}{Mastodon}, whose history has been already unfolded before, counting more than four million users worldwide and growing {(La Cava, Greco, and Tagarelli 2021)}.
+
+The distributed core-less nature of decentralized social media networks restores what should have always been networking platforms' main goal: grouping individuals, offering communities a way to stay in touch, enhancing human interactions without any second purpose driven by economical interest {(Zulli, Liu, and Gehl 2020)}. What is argued by {(Reviglio and Agosti 2020)} finds a meeting point in a process of platforms decentralization, in which the gap among those who provide a service and the ones benefit from it is small and it could be easily filled with a message.
+
+\hypertarget{a-focus-on-community}{%
+\subsection{A focus on community}\label{a-focus-on-community}}
+
+In a new world where virtual relations wander inside a universe of federated platforms, the ultimate stakeholder is not a board of navigated moneymen, but the ensemble of communities that form it. There is no single point of failure not only from a technical perspective, but there is nobody having the last decision-wise too. New subscribers can freely decide which one of the infinitely many instances run by different software suits her/him the most, and once in it, she/he automatically signs a tacit (yet explicit) contract to meld into the values she/he chose that specific platform for.
+
+Terms of Service, Community Guidelines, Privacy Policy, and all of the elements necessary to keep people together are not handed over from above by some unknown figure, but they are defined commonly and nobody is forced to agree to them, since signing up elsewhere is very easy. In the case of a report or complaint, content moderation is almost trivial, since all over the world instances hundreds of thousands of users big can be counted on the fingers of one hand, while all the others' user count does not surpass five figures. There is no need for under-payed private contractors to stare at a screen for countless hours to take down hate speech. Users become their own moderators, since when a post from an user subscribed to another instance, appears as offensive to a transgender member of a community whose Code of Conduct explicitly refuses transphobia, the community administrator is permitted to make that post disappear from her/his instance without any further step.
+
+Communities empowerment online brings back the quintessential value of plurality: there may be servers hosting one or little more users, who find their actual interactions only by connecting to ``worlds'' (figuratively meaning servers and spheres of thinking) that can happen to be profoundly different by hers/his one. Communities as well as individuals unable to live together with others end up isolated, or ``de-federated''. It is the case of \href{https://gab.com/}{Gab} social network, originally part of the Fediverse, but gradually disconnected by almost all of the other instances.
+
+\hypertarget{immortality}{%
+\subsection{Immortality}\label{immortality}}
+
+The ultimate superpower of the Fediverse is its immortality. Even if the bigger instances will be shut down and software development will stop, the open source of every single aspect of it enables any student of Computer Engineering, as well as any tech enthusiast or company to install the software on a server and keep the Fediverse alive. There is no necessity to ``monetize'' anything, since there are no capitals required to keep things running. Investments and funding are very welcomed and happily spent on improving the software, but very little is needed to simply make things work.
+
+What is almost romantic about decentralization is its intrinsic value of undefeatability. Even the stoical resistance of one single node can maintain alive the hope that the whole net will be brought back.
+
+\hypertarget{conclusion}{%
+\chapter{Conclusion}\label{conclusion}}
+
+Among the most descriptive slogans of the Internet, it thunders ``move fast, break things'', Facebook's motto during the 2000s. From such a provocative and daring statement stems a culture that privileges speed over stability, by obviously disregarding the hard, slow, boring questions. Why did we accept this reluctance? Why do we keep accepting it?
+
+I keep playing in my head the words of professor Paltrinieri, spoken during the first handful of minutes of the first class of Theoretical Philosophy, my last course of this bachelor degree. He said that philosophy is not meant for emergency and quickness. When a room is on fire it is not the right time to think what is the nature of fire, whether it has a viable physical explanation or not; those inside the room just need to get out as fast as possible. The modern urgence of pursuing progress at any cost never allowed us to properly dive deeper into studyin what the Internet \emph{is}, and what is its deepest significance. ``Digital humanities'' should stop being interpreted as an adaptation of ancient philosophical knowledge to the modern word. Instead, they should finally manage to squeeze social and political philosophy within the deepest structure of the World Wide Web.
+
+In less than 30 years of history the digital revolution introduced changes with unprecedented pace and scale, but gradually accruing many troubling interrogatives that are now insistently pounding at our doors. Simply getting to work and do our best to answer them would correspond to desperately putting patches on a sinking ship. Let us build a new one: commonly, we possess the skills, the vision, and for sure we have plenty of motivation. We only miss sufficient awareness awareness and a solid unity.
+
+The Internet conceived and built by the visionaries whose story has been narrated here follows a human vision. As such, even though the solution is technical, both the purposes and the motives are political. It is time to make the Internet political. Aaron Swartz understood this, and he lived his whole life not only pursuing, but also embodying such a sincere and honorable convinction. This thesis is dedicated to him, and I am profoundly grateful to Aaron for inspiring the rest of us.
+
+\hypertarget{thank-you}{%
+\chapter{Thank you}\label{thank-you}}
+
+\ldots to my mum and dad. We fight, we struggle. Still, the love and the support coming out of our hardships are the best things in the universe.
+
+\ldots to my Sparkling Family, to the extra large Marmo's, which is more than a family, but an actual community: coming home to you is never the same, but it is always as heartwarming as nothing else could be.
+
+\ldots to Sabrina, whose importance to me goes beyond any word I could write. It is not despite our reciprocal flaws, but precisely \emph{thanks to them} that our affection and our friendship are so great and so deep.
+
+\ldots to the many, incredibly different, and uniquely awesome humans I am so grateful to call friends. I always tell you that my heart is like a puzzle, and you are its pieces; it would be incomplete without any one of you. You really are the fuel of my existence.
+
+\ldots to AGESCI Costa Balenæ 1 (especially Clan Ubuntu) and AGESCI Mira 1, to Radioimmaginaria, to the Giffoni Factory, to Club Tenco and the Francy Boyz, to my high school classmates, to Bankod, to La Nuova Corrente, to Libera Imperia, to i Posteri, to Grenoble HARSH dream team, to Casa Campo, to Scambi Festival, and to all the other groups and communities I have been a part of. Everything I did with you taught me something invaluable.
+
+Finally, there are some figures who---knowingly or unconsciously---particularly inspired and guided me in paving my future. I might call them my life gurus, and I would like to name them following chronological order they appeared in my life: professor Lucinda Buja; \emph{maestra Antonella} and \emph{maestra Evelina}; Libereso Guglielmi; Marina Martina (``Akela''); Monsignor Umberto Toffani and Don Nuccio; professor Laura Cimardi; Michele Ferrari (``Zio Mic'') and Alan Borsari + Amalia Campagna and Giulia Morini; each and everyone of my high school teachers in their own peculiar way; professor Sergio Ausenda (``Sergione''); Graziella Corrent and Francesco Maccario; professor Silvio Mercadante; Marco Ponti; Arianna Cavallo; Don Luca Biancafio; professor Fabrizio Turoldo; Tim Berners-Lee, who I had the honor of meeting exactly while writing the conclusion of this thesis.
+
+A shoutout to fauno, who helped me fix a bunch of last second issues with \href{https://tommi.space/pandoc-workflow}{this thesis' code formatting}, before submitting it on the Ca' Foscari website during DWeb Camp 2023, from Camp Navarro, Mendocino Valley, California.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+It is not an exaggeration to recognize that what I wrote in these pages is the true result of a myriad of tiny and huge inputs and experiences I lived over the last four years of my life. I feel, I am extremely privileged to continuously stumble upon so many insightful opportunities and brilliant people.
+
+This thesis sharply marks the end of a chapter of my life, and opens a scary black hole in my future. I know it can, it will, be devastating, overwhelming, hurtful, but at the same time rich of new ways of knowing better both myself and what is around me.\\
+I can't wait to dive into it.
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\hypertarget{ref-AboutOpenLibrary}{}
+{``About {Us}; {Open Library}.''} n.d. {Open Library}. Accessed May 27, 2023. \url{https://openlibrary.org/about}.
+
+\hypertarget{ref-adlerAuditingBlackboxModels2016}{}
+Adler, Philip, Casey Falk, Sorelle A. Friedler, Gabriel Rybeck, Carlos Scheidegger, Brandon Smith, and Suresh Venkatasubramanian. 2016. {``Auditing {Black-box Models} for {Indirect Influence}.''} \emph{ArXiv160207043 Cs Stat}, November. \url{http://arxiv.org/abs/1602.07043}.
+
+\hypertarget{ref-ankenyIntroductionPhilosophyScience2011}{}
+Ankeny, Rachel, Hasok Chang, Marcel Boumans, and Mieke Boon. 2011. {``Introduction: Philosophy of Science in Practice.''} \emph{Euro Jnl Phil Sci} 1 (3): 303. \url{https://doi.org/10.1007/s13194-011-0036-4}.
+
+\hypertarget{ref-arendtHumanCondition2018}{}
+Arendt, Hannah. 2018. \emph{The {Human Condition}}. Edited by Margaret Canovan and a New Foreword by Danielle Allen. Second Edition. {Chicago, IL}: {University of Chicago Press}. \url{https://press.uchicago.edu/ucp/books/book/chicago/H/bo29137972.html}.
+
+\hypertarget{ref-bahriDecentralizedPrivacyPreserving2018}{}
+Bahri, Leila, Barbara Carminati, and Elena Ferrari. 2018. {``Decentralized Privacy Preserving Services for {Online Social Networks}.''} \emph{Online Social Networks and Media} 6 (June): 18--25. \url{https://doi.org/10.1016/j.osnem.2018.02.001}.
+
+\hypertarget{ref-baranDistributedCommandControl1960}{}
+Baran, Paul. 1960. {``On a {Distributed Command} and {Control System Configuration}.''} {RAND Corporation}. \url{https://rand.org/pubs/research_memoranda/RM2632.html}.
+
+\hypertarget{ref-berners-leeWorldWideWeb1998}{}
+Berners-Lee, Tim. 1998. {``The {World Wide Web}: {A} Very Short Personal History.''} May 7, 1998. \url{https://www.w3.org/People/Berners-Lee/ShortHistory.html}.
+
+\hypertarget{ref-blackGapShould1964}{}
+Black, Max. 1964. {``The {Gap Between} "{Is}" and "{Should}".''} \emph{Philos. Rev.} 73 (2): 165--81. \url{https://doi.org/10.2307/2183334}.
+
+\hypertarget{ref-bodleRegimesSharing2011}{}
+Bodle, Robert. 2011. {``Regimes of {Sharing}.''} \emph{Inf. Commun. Soc.} 14 (3): 320--37. \url{https://doi.org/10.1080/1369118X.2010.542825}.
+
+\hypertarget{ref-chanColonialOutpostSpecial2008}{}
+Chan, Roger C. K., and George C. S. Lin. 2008. {``From a {Colonial Outpost} to a {Special Administrative Region}: {Hong Kong}'s {First Decade} of {Reunion} with {China}.''} \emph{China Rev.} 8 (1): 1--6. \url{https://www.jstor.org/stable/23462258}.
+
+\hypertarget{ref-chenSavingRainyDay2018}{}
+Chen, Hsuan-Chi, Robin K. Chou, and Chien-Lin Lu. 2018. {``Saving for a Rainy Day: {Evidence} from the 2000 Dot-Com Crash and the 2008 Credit Crisis.''} \emph{Journal of Corporate Finance} 48 (February): 680--99. \url{https://doi.org/10.1016/j.jcorpfin.2017.12.025}.
+
+\hypertarget{ref-cohonHumeMoralPhilosophy2004}{}
+Cohon, Rachel. 2004. {``Hume's {Moral Philosophy},''} October. \url{https://plato.stanford.edu/archives/fall2018/entries/hume-moral/}.
+
+\hypertarget{ref-atlanticcouncilTargetingAntiExtraditionBill2020}{}
+Council, Atlantic. 2020. {``Targeting the {Anti-Extradition Bill Movement}: {China}'s {Hong Kong Messaging Proliferates} on {Social Media}.''} {Atlantic Council}. \url{https://www.jstor.org/stable/resrep30702}.
+
+\hypertarget{ref-crockerHowInternetGot2009}{}
+Crocker, Stephen D. 2009. {``How the {Internet Got Its Rules}.''} \emph{The New York Times: Opinion}, April 7, 2009. \url{https://nytimes.com/2009/04/07/opinion/07crocker.html}.
+
+\hypertarget{ref-curranParadoxMediaPower2003}{}
+Curran, James P., and Nick Couldry. 2003. {``The Paradox of Media Power.''} In, edited by James P. Curran and Nick Couldry, 3--16. {Rowman \& Littlefield Publishers}. \url{https://research.gold.ac.uk/id/eprint/14201/}.
+
+\hypertarget{ref-DigitalMarketsAct2022}{}
+\emph{Digital {Markets Act}}. 2022. \emph{32022R1925}. \url{https://eur-lex.europa.eu/eli/reg/2022/1925/oj}.
+
+\hypertarget{ref-edelmanSocialMediaCEOs2021}{}
+Edelman, Gilad. 2021. {``Social {Media CEOs Can}'t {Defend Their Business Model}.''} \emph{Wired}, March 25, 2021. \url{https://www.wired.com/story/social-media-ceo-hearing-cant-defend-business-model/}.
+
+\hypertarget{ref-FactsW3C}{}
+{``Facts {About W3C}.''} n.d. Accessed April 16, 2023. \url{https://www.w3.org/Consortium/facts}.
+
+\hypertarget{ref-fernandezrobinWhatsApp2017}{}
+Fernández Robin, Cristóbal, Scott McCoy, and Diego Yáñez. 2017. {``{WhatsApp}.''} In \emph{Social {Computing} and {Social Media}. {Applications} and {Analytics}}, edited by Gabriele Meiselwitz, 10283:82--90. {Cham}: {Springer International Publishing}. \url{https://doi.org/10.1007/978-3-319-58562-8_7}.
+
+\hypertarget{ref-fuchsPoliticalEconomyCapitalist2015}{}
+Fuchs, Christian, and Marisol Sandoval. 2015. {``The {Political Economy} of {Capitalist} and {Alternative Social Media}.''} In \emph{The {Routledge Companion} to {Alternative} and {Community Media}}, 1st ed., 165--75. {London}: {Routledge}. \url{https://doi.org/10.4324/9781315717241}.
+
+\hypertarget{ref-gainsburyExploratoryStudyGambling2016}{}
+Gainsbury, Sally M., Paul Delfabbro, Daniel L. King, and Nerilee Hing. 2016. {``An {Exploratory Study} of {Gambling Operators}' {Use} of {Social Media} and the {Latent Messages Conveyed}.''} \emph{J Gambl Stud} 32 (1): 125--41. \url{https://doi.org/10.1007/s10899-015-9525-2}.
+
+\hypertarget{ref-guidiManagingSocialContents2018}{}
+Guidi, Barbara, Marco Conti, Andrea Passarella, and Laura Ricci. 2018. {``Managing Social Contents in {Decentralized Online Social Networks}: {A} Survey.''} \emph{Online Social Networks and Media} 7 (September): 12--29. \url{https://doi.org/10.1016/j.osnem.2018.07.001}.
+
+\hypertarget{ref-hoepmanTRANSPARENCYPERFECTCOVERUP2018}{}
+Hoepman, Jaap-Henk. 2018. {``{TRANSPARENCY IS THE PERFECT COVER-UP} ({IF THE SUN DOES NOT SHINE}).''} In \emph{{BEING PROFILED}}, edited by Emre Bayamlioğlu, Irina Baraliuc, Liisa Janssens, and Mirelle Hildebrandt, 46--51. {COGITAS ERGO SUM}: 10 {Years} of {Profiling} the {European Citizen}. {Amsterdam University Press}. \url{https://doi.org/10.2307/j.ctvhrd092.11}.
+
+\hypertarget{ref-hubermanGrowthDynamicsWorldWide1999}{}
+Huberman, Bernardo A., and Lada A. Adamic. 1999. {``Growth Dynamics of the {World-Wide Web}.''} \emph{Nature} 401 (6749, 6749): 131--31. \url{https://doi.org/10.1038/43604}.
+
+\hypertarget{ref-InternetArchiveBios}{}
+{``Internet {Archive}: {Bios}.''} n.d. Accessed May 24, 2023. \url{https://archive.org/about/bios.php}.
+
+\hypertarget{ref-kahinCommercializationInternetSummary1990}{}
+Kahin, Brian. 1990. {``Commercialization of the {Internet} Summary Report.''} Request for Comments RFC 1192. {Internet Engineering Task Force}. \url{https://doi.org/10.17487/RFC1192}.
+
+\hypertarget{ref-kazemiRFCs}{}
+Kazemi, Darius. 2019. {``365 {RFCs}: A 50th Anniversary Dive.''} {365 RFCs}. January 1, 2019. \url{https://write.as/365-rfcs/365-ietf-rfcs-a-50th-anniversary-dive}.
+
+\hypertarget{ref-knappenbergerInternetOwnBoy2014}{}
+Knappenberger, Brian, dir. 2014. \emph{The {Internet}'s {Own Boy}: {The Story} of {Aaron Swartz}}. Documentary. {Participant Media}.
+
+\hypertarget{ref-lacavaUnderstandingGrowthFediverse2021}{}
+La Cava, Lucio, Sergio Greco, and Andrea Tagarelli. 2021. {``Understanding the Growth of the {Fediverse} Through the Lens of {Mastodon}.''} \emph{ArXiv210615473 Phys.}, June. \url{http://arxiv.org/abs/2106.15473}.
+
+\hypertarget{ref-laybatsGDPRImplementingRegulations2018}{}
+Laybats, Claire, and John Davies. 2018. {``{GDPR}: {Implementing} the Regulations.''} \emph{Business Information Review} 35 (2): 81--83. \url{https://doi.org/10.1177/0266382118777808}.
+
+\hypertarget{ref-liaoMiningUserKnowledge2014}{}
+Liao, Shu-Hsien, Pei-Yuan Hsian, and Guo-Liang Wu. 2014. {``Mining {User Knowledge} for {Investigating} the {Facebook Business Model}: {The Case} of {Taiwan Users}.''} \emph{Applied Artificial Intelligence} 28 (7): 712--36. \url{https://doi.org/10.1080/08839514.2014.927695}.
+
+\hypertarget{ref-lihHongKongProtests2014}{}
+Lih, Andrew. 2014. {``In {Hong Kong}'s Protests, Technology Is a Battlefield.''} \emph{Quartz}, October 2, 2014. \url{https://qz.com/274973/in-hong-kongs-protests-technology-is-a-battlefield/}.
+
+\hypertarget{ref-LinuxStatistics2023}{}
+{``Linux {Statistics} 2023.''} n.d. {TrueList}. Accessed April 24, 2023. \url{https://truelist.co/blog/linux-statistics/}.
+
+\hypertarget{ref-luqiuBoundedBoundlessCase2021}{}
+Luqiu, Luwei Rose, and Shuning Lu. 2021. {``Bounded or {Boundless}: {A Case Study} of {Foreign Correspondents}' {Use} of {Twitter During} the 2019 {Hong Kong Protests}.''} \emph{Soc. Media Soc.} 7 (1): 2056305121990637. \url{https://doi.org/10.1177/2056305121990637}.
+
+\hypertarget{ref-martiniMourningHacktivistGrieving2018}{}
+Martini, Michele. 2018. {``Mourning for a Hacktivist: Grieving the Death of {Aaron Swartz} on a Digital Memorial.''} \emph{Media Cult. Soc.} 40 (2): 228--45. \url{https://doi.org/10.1177/0163443717718254}.
+
+\hypertarget{ref-mayberryHongKongControversial2019}{}
+Mayberry, Kate. 2019. {``Hong {Kong}'s Controversial Extradition Bill Explained.''} \emph{Al Jazeera}, June 11, 2019. \url{https://www.aljazeera.com/news/2019/6/11/hong-kongs-controversial-extradition-bill-explained}.
+
+\hypertarget{ref-milberryOpenSourcingOur2009}{}
+Milberry, Kate, and Steve Anderson. 2009. {``Open {Sourcing Our Way} to an {Online Commons}: {Contesting Corporate Impermeability} in the {New Media Ecology}.''} \emph{Journal of Communication Inquiry} 33 (4): 393--412. \url{https://doi.org/10.1177/0196859909340349}.
+
+\hypertarget{ref-moodyGreatestOSThat}{}
+Moody, Glyn. n.d. {``The {Greatest OS That} ({N})ever {Was}.''} \emph{Wired}. Accessed April 24, 2023. \url{https://wired.com/1997/08/linux-5/}.
+
+\hypertarget{ref-moscoCriticalPerspectivePostInternet2018}{}
+Mosco, Vincent. 2018. {``A {Critical Perspective} on the {Post-Internet World}.''} \emph{Javn. - Public} 25 (1-2): 210--17. \url{https://doi.org/10.1080/13183222.2018.1418976}.
+
+\hypertarget{ref-nacosDonaldTrumpAggressive2020}{}
+Nacos, Brigitte L., Robert Y. Shapiro, and Yaeli Bloch-Elkon. 2020. {``Donald {Trump}: {Aggressive Rhetoric} and {Political Violence}.''} \emph{Perspect. Terror.} 14 (5): 2--25. \url{https://www.jstor.org/stable/26940036}.
+
+\hypertarget{ref-NetscapeCommunicationsCorporation1995}{}
+{``Netscape {Communications Corporation Announces Initial Public Offering Of} 5,000,000 {Shares Of Common Stock}.''} 1995, August 9, 1995. \url{https://www.tech-insider.org/internet/research/1995/0809.html}.
+
+\hypertarget{ref-OCLPManifesto2014}{}
+\emph{{OCLP Manifesto}}. 2014. \url{http://oclp.hk/index.php?route=occupy\%2Feng_detail\&eng_id=9}.
+
+\hypertarget{ref-pangRetheorizingSocialUse2017}{}
+Pang, Laikwan. 2017. {``Retheorizing the {Social}: {The Use} of {Social Media} in {Hong Kong}'s {Umbrella Movement}.''} \emph{94786} 35 (September): 71--94. \url{https://doi.org/10.1215/01642472-3968810}.
+
+\hypertarget{ref-barnPaulBaranInterview1999}{}
+{``Paul {Baran}: {An Interview Conducted} by {David Hochfelder}.''} 1999. \url{https://ethw.org/Oral-History:Paul_Baran}.
+
+\hypertarget{ref-pradeuPhilosophyScienceCan2021}{}
+Pradeu, Thomas, Mael Lemoine, Mahdi Khelfaoui, and Yves Gingras. 2021. {``Philosophy in {Science}: {Can} Philosophers of Science Permeate Through Science and Produce Scientific Knowledge?''} \emph{Br. J. Philos. Sci.}, May. \url{https://doi.org/10.1086/715518}.
+
+\hypertarget{ref-ProposalREGULATIONEUROPEAN2021}{}
+\emph{Proposal for a {REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE} ({ARTIFICIAL INTELLIGENCE ACT}) {AND AMENDING CERTAIN UNION LEGISLATIVE ACTS}}. 2021. \url{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex\%3A52021PC0206}.
+
+\hypertarget{ref-ReportNETEvaluation1963}{}
+\href{https://nsarchive.gwu.edu/document/28620-document-12-1963-report-net-evaluation-subcommittee-national-security-council-oral}{Report of the {NET Evaluation Subcommittee}, {National Security Council}}. 1963 19.
+
+\hypertarget{ref-reviglioThinkingOutsideBlackBox2020}{}
+Reviglio, Urbano, and Claudio Agosti. 2020. {``Thinking {Outside} the {Black-Box}: {The Case} for {`{Algorithmic Sovereignty}'} in {Social Media}.''} \emph{Social Media + Society} 6 (2): 1--12. \url{https://doi.org/10.1177/2056305120915613}.
+
+\hypertarget{ref-rivlinLeaderFreeWorld}{}
+Rivlin, Gary. n.d. {``Leader of the {Free World}.''} \emph{Wired}. Accessed April 24, 2023. \url{https://www.wired.com/2003/11/linus/}.
+
+\hypertarget{ref-roioAlgorithmicSovereignty2018}{}
+Roio, Denis. 2018. {``Algorithmic {Sovereignty}.''} Thesis, {University of Plymouth}. \url{https://hdl.handle.net/10026.1/11101}.
+
+\hypertarget{ref-ryanHistoryInternetDigital2010}{}
+Ryan, Johnny. 2010. \emph{A {History} of the {Internet} and the {Digital Future}}. 1st ed. {London, GBR}: {Reaktion Books}.
+
+\hypertarget{ref-schaferBackRootsARPANET2019}{}
+Schafer, Valerie, Sarah Cooper, and Camille Paloque-Bergès. 2019. {``Back to the Roots of {ARPANET} and {Internet} History with {Alexandre Serres}.''} \emph{Internet Hist. Digit. Technol. Cult. Soc.}, January. \url{https://doi.org/10.1080/24701475.2018.1560680}.
+
+\hypertarget{ref-simpsonEmailArchivingSystems2016}{}
+Simpson, Joel. 2016. {``Email {Archiving Systems Interoperability}.''} \url{https://dash.harvard.edu/handle/1/28682572}.
+
+\hypertarget{ref-soOneCountryTwo2011}{}
+So, Alvin Y. 2011. {``{`{One Country}, {Two Systems}'} and {Hong Kong-China National Integration}: {A Crisis-Transformation Perspective}.''} \emph{J. Contemp. Asia} 41 (1): 99--116. \url{https://doi.org/10.1080/00472336.2011.530039}.
+
+\hypertarget{ref-stachwellTaoOpenSource2005}{}
+Stachwell, Matthew D. 2005. {``Tao of {Open Source}: {Minimum Action} for {Maximum Gain}.''} \emph{Berkeley Technol. Law J.} 20 (4): 1758--79. \url{https://jstor.org/stable/24117438}.
+
+\hypertarget{ref-stallmanFreeSoftwareFree2002}{}
+Stallman, Richard M. 2002. \emph{Free {Software}, {Free Society}: {Selected Essays} of {Richard M}. {Stallman}}. Vol. 1. 1 vols. {Boston}: {Free Software Foundation}. \url{https://www.gnu.org/philosophy/fsfs/rms-essays.pdf}.
+
+\hypertarget{ref-tingEastAsiaAction2019}{}
+Ting, Tin-yuet. 2019. {``East {Asia} in {Action}\textbar{} {Everyday Networked Activism} in {Hong Kong}'s {Umbrella Movement}: {Expanding} on {Contemporary Practice Theory} to {Understand Activist Digital Media Usages}.''} \emph{Int. J. Commun.} 13 (July): 20. \url{https://ijoc.org/index.php/ijoc/article/view/9557}.
+
+\hypertarget{ref-verduynSocialNetworkSites2017}{}
+Verduyn, Philippe, Oscar Ybarra, Maxime Résibois, John Jonides, and Ethan Kross. 2017. {``Do {Social Network Sites Enhance} or {Undermine Subjective Well-Being}? {A Critical Review}.''} \emph{Soc. Issues Policy Rev.} 11 (1): 274--302. \url{https://doi.org/10.1111/sipr.12033}.
+
+\hypertarget{ref-vromenYoungPeopleSocial2015}{}
+Vromen, Ariadne, Michael A. Xenos, and Brian Loader. 2015. {``Young People, Social Media and Connective Action: From Organisational Maintenance to Everyday Political Talk.''} \emph{J. Youth Stud.} 18 (1): 80--100. \url{https://doi.org/10.1080/13676261.2014.933198}.
+
+\hypertarget{ref-weberDreiReinenTypen1922}{}
+Weber, Max. 1922. {``Die drei reinen Typen der legitimen Herrschaft.''} \emph{Preuss. Jahrb.}, no. 187: 1--2.
+
+\hypertarget{ref-wegnerInteroperability1996}{}
+Wegner, Peter. 1996. {``Interoperability.''} \emph{ACM Comput. Surv.} 28 (1): 285--87. \url{https://doi.org/10.1145/234313.234424}.
+
+\hypertarget{ref-yeungFiveFearsMass2018}{}
+Yeung, Karen. 2018. {``Five Fears about Mass Predictive Personalization in an Age of Surveillance Capitalism.''} \emph{International Data Privacy Law} 8 (3): 258--69. \url{https://doi.org/10.1093/idpl/ipy020}.
+
+\hypertarget{ref-zhuBeijingRuleLaw2019}{}
+Zhu, Han. 2019. {``Beijing's {`{Rule} of {Law}'} {Strategy} for {Governing Hong Kong}.''} \emph{China Perspect.} 2019 (1, 1): 23‑33. \url{https://doi.org/10.4000/chinaperspectives.8686}.
+
+\hypertarget{ref-zuboffBigOtherSurveillance2015}{}
+Zuboff, Shoshana. 2015. {``Big {Other}: {Surveillance Capitalism} and the {Prospects} of an {Information Civilization}.''} SSRN Scholarly Paper ID 2594754. {Rochester, NY}: {Social Science Research Network}. \url{https://papers.ssrn.com/abstract=2594754}.
+
+\hypertarget{ref-zuboffAgeSurveillanceCapitalism2019}{}
+---------. 2019. \emph{The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power}. {New York}: {Public Affairs}.
+
+\hypertarget{ref-zulliRethinkingSocialSocial2020}{}
+Zulli, Diana, Miao Liu, and Robert Gehl. 2020. {``Rethinking the {`Social'} in {`Social Media'}: {Insights} into Topology, Abstraction, and Scale on the {Mastodon} Social Network.''} \emph{New Media \& Society} 22 (7): 1188--1205. \url{https://doi.org/10.1177/1461444820912533}.
+
+\end{CSLReferences}
+
+\backmatter
+\end{document}
