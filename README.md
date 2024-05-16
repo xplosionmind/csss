@@ -9,16 +9,16 @@ Note: unfortunately, I was not considerate enough to keep track of my work throu
 - 👾 [Markdown](Computer%20Sciences%20Are%20Social%20Sciences.md) and [LaTeX](Computer%20Sciences%20Are%20Social%20Sciences.tex) source files
 - 📚 [Bibliography](Computer%20Sciences%20Are%20Social%20Sciences.bib)
 - 📊 [Figures](figures/)
-- 📽️ [Presentations](/presentations/) often linked to [*Sewing Our Internet*](https://tommi.space/sewnet 'Sewing Our Internet, tommi.space')
+- 📽️ [Presentations](/presentations/) often linked to [*Knitting Our Internet*](https://tommi.space/ournet/ 'Knitting Our Internet, tommi.space')
 - 🏷️ [YAML metadata](Computer%20Sciences%20Are%20Social%20Sciences.yml) for [Pandoc parsing](#build-process)
 - 🖋️ [Tim Berners-Lee’s autograph](TBL%20autograph/) of the front page (yes, I know! 😍)
 
-## Workshop: *Sewing Our Internet*
+## Workshop: *Knitting Our Internet*
 
 Since I feel very strongly about the topics of this thesis, I have been thinking hard of ways to inform and involve people.
-Out of this effort, a workshop came out, and I had the honour and pleasure to host it in many occasions with diverse crowds of various ages.
+Out of this effort, a workshop came out, and I am thrilled to ne hosting it in many amazing occasions, with diverse crowds of various ages.
 
-The workshop is called [***Sewing Our Internet***](https://tommi.space/sewnet 'Sewing our Internet, tommi.space').
+The workshop is called [***Knitting Our Internet***](https://tommi.space/ournet/ 'Knitting our Internet, tommi.space').
 
 ## License
 
