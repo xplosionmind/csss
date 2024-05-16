@@ -1,6 +1,6 @@
 # Computer Sciences Are Social Sciences!
 
-[This repository](https://codeberg.org/tommi/csss 'csss repository on Codeberg') hosts [Tommi](https://tommi.space/home#about 'About Tommi')’s [bachelor’s thesis](https://tommi.space/csss.pdf), written between February and June 2023.
+[This repository](https://codeberg.org/tommi/csss 'csss repository on Codeberg') hosts [Tommi](https://tommi.space/home#about 'About Tommi')’s [bachelor’s thesis](https://csss.tommi.space 'Computer Sciences Are Social Sciences – Tommaso Marmo’s bachelor thesis.pdf'), written between February and June 2023.
 
 Note: unfortunately, I was not considerate enough to keep track of my work through git progressively. This repository has been created later, in April 2024. Hence, the commits up to that date *do not* reflect the actual moment when the content was created. Hopefully, I will be able to create commits step by step in the future.
 
