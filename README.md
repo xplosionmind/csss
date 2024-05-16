@@ -56,7 +56,7 @@ Please, refer to [my technical notes](https://tommi.space/pandoc-workflow/ 'Acad
 	1. [<q>The Unprecedented</q>](Computer%20Sciences%20Are%20Social%20Sciences.md#q-the-unprecedented-q)
 	2. [Economy and technology: an inseparable duo](Computer%20Sciences%20Are%20Social%20Sciences.md#economy-and-technology-an-inseparable-duo)
 	3. [The essence of technology](Computer%20Sciences%20Are%20Social%20Sciences.md#the-essence-of-technology)
-3. [Case study: Hong Kong’s Umbrella Movement](Computer%20Sciences%20Are%20Social%20Sciences.md#case-study-hong-kongs-umbrella-movement)
+3. [Case study: Hong Kong’s Umbrella Movement](Computer%20Sciences%20Are%20Social%20Sciences.md#case-study-hong-kong-s-umbrella-movement)
 	1. [The political context: Hong Kong’s strive for democracy](Computer%20Sciences%20Are%20Social%20Sciences.md#the-political-context-hong-kong-s-strive-for-democracy)
 	2. [Puppeting emotions: social media as a political actor](Computer%20Sciences%20Are%20Social%20Sciences.md#puppeting-emotions-social-media-as-a-political-actor)
 	3. [Becoming water: protests’ decentralization and repression](Computer%20Sciences%20Are%20Social%20Sciences.md#becoming-water-protests-decentralization-and-repression)
