@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Tommi">
+  <title>Computer Sciences are Social Sciences!</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Computer Sciences are Social Sciences!</h1>
+  <p class="author">Tommi</p>
+  <p class="institute">p4p</p>
+  <p class="date">2024-05-25T13:36:01+02:00</p>
+</section>
+
+<section id="about-this-weirdo" class="slide level2">
+<h2>About this weirdo</h2>
+<div class="columns">
+<div class="column" style="width:“50%”;">
+<ul>
+<li>From Sanremo, <strong>Italy</strong></li>
+<li>anxious and overenthusiastic</li>
+<li>quit centralized social media in 2020</li>
+<li>Free Software, DWeb, <em>Fediverse</em>, and digital rights
+activist<br />
+</li>
+</ul>
+</div><div class="column" style="width:“50%”;">
+<p><img data-src="https://tommi.space/profile.jpg" /></p>
+</div>
+</div>
+</section>
+<section id="a-few-premises" class="slide level2">
+<h2>A few premises</h2>
+<ul>
+<li>This presentation is a work in progress, limited, and at times
+oversimplified experiment</li>
+<li>I am still learning, please excuse missing points</li>
+<li>The main purpose of this talk is to <strong>foster
+reasoning</strong> and <strong>stimulate a dialogue</strong></li>
+<li>Throughout the talk, the focus is on <strong>the Internet</strong>
+as an instance of Computer Science</li>
+</ul>
+</section>
+<section id="a-chronological-journey" class="slide level2">
+<h2>A chronological journey</h2>
+<ol type="1">
+<li>The birth of the Internet</li>
+<li>The current Internet and its flows</li>
+<li>Developing digital futures starting from a socio-philosophical
+approach</li>
+</ol>
+</section>
+<section id="the-birth-of-the-internet" class="slide level2">
+<h2>The birth of the Internet</h2>
+<blockquote>
+<p>Baran’s concept had the same <strong>centrifugal</strong> character
+that defines the Internet today. At its most basic, … the “centrifugal”
+approach is <u>to flatten established hierarchies and put power and
+responsibility at the nodal level</u> so that each node is equal.
+Baran’s network focused on what he called <q><u>user to user rather than
+… centre-to-centre operation</u></q>.</p>
+</blockquote>
+<p>~ Johnny Ryan, <em>A History of the Internet and the Digital
+Future</em></p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="../figures/baran-diagram.jpg"
+alt="Paul Baran’s 1964 Internet conceptualization" />
+<figcaption aria-hidden="true">Paul Baran’s 1964 Internet
+conceptualization</figcaption>
+</figure>
+</section>
+<section id="collaboration-that-stranger" class="slide level2">
+<h2>Collaboration, that stranger</h2>
+<blockquote>
+<p>At the core of Licklider’s thinking was <u>an emphasis on
+collaboration</u>. Licklider posited a future scenario in which a
+researcher at one research centre could find a useful computer resource
+over the network from a research centre elsewhere. This, in a world of
+incompatible machines and jealously guarded computing resources, was
+far-sighted talk indeed.</p>
+</blockquote>
+<p>~ Johnny Ryan, <em>A History of the Internet and the Digital
+Future</em></p>
+</section>
+<section id="the-internet-of-the-90s" class="slide level2">
+<h2>The Internet of the ’90s</h2>
+<ul>
+<li>a widespread <em>diffidence</em> by non-experts towards digital
+telecommunications, because of its subversive <em>complexity</em>, but
+also because of…</li>
+<li>…a fundamental <em>counter-intuitiveness</em> of the infrastructure,
+based on…</li>
+<li>…a heavily <em>decentralized</em> system, where no main node exists,
+and whose effectiveness is based on the <em>distribution</em> and
+<em>redundancy</em> of information and computing resources;</li>
+<li>a focus on <em>collaboration</em>, on <em>sharing ideas</em> and
+resources, on commonly defined standards allowing
+<em>interoperability</em>;</li>
+<li>both a strive and a drive for <em>interconnecting</em> concepts,
+users, and devices;</li>
+<li>a diffused feeling of liberty and <em>curiosity</em>, fostered by a
+great <em>informality</em> coupled with a cozy and friendly
+community;</li>
+<li>lack of interest from the financial world.</li>
+</ul>
+</section>
+<section id="the-internets-original-sin" class="slide level2">
+<h2>The Internet’s Original Sin</h2>
+<p>On April 30<sup>th</sup>, 1995, the National Science Foundation
+deliberated that the Internet would be <strong>fully in the hands of the
+private sector</strong>.</p>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>Living in America at the end of the millenium…<br />
+you are what you own</p>
+</blockquote>
+<p>~ Rent (1996)</p>
+</section>
+<section class="slide level2">
+
+<p><strong>Spoiler</strong>: long story short, the problem of the
+Internet, the whole problem, is Capitalism</p>
+</section>
+<section id="the-internet-of-the-2020s" class="slide level2">
+<h2>The Internet of the 2020s</h2>
+<ul>
+<li>a widespread <strong>blind reliance</strong> on digital
+telecommunication tools by non-experts;</li>
+<li>…that compose <strong>appealing</strong> and
+<strong>intuitive</strong> platforms, nicely and masterfully simplified
+by exploiting…</li>
+<li>…a strong and almost inescapable <strong>centralization</strong>
+carried out by monopolistic <strong>profit-driven</strong>
+companies;</li>
+<li>a strongly <strong>competitive</strong> business, inherited by the
+deeply capitalist culture the <em>dot com bubble</em> represented;</li>
+<li>as with anything inscribed within a capitalist economic system,
+technological innovation is carried out in parallel by the isolated
+silos that are the different companies potentially working on the same
+project, and <strong>competing</strong> to overcome the others rather
+than join forces with the common purpose of providing the best service
+possible;</li>
+<li>interconnection opportunity is functional and <strong>subordinate to
+the monetization</strong> and the general profitability of digital
+devices;</li>
+<li>Computer Sciences and the Internet are not merely strongly tied with
+finance, but they are directly <strong>dominated by the market</strong>,
+and their principles are more financial ones rather than technological
+and human ones.</li>
+</ul>
+</section>
+<section id="a-cautionary-tale" class="slide level2">
+<h2>A cautionary tale</h2>
+<figure>
+<img data-src="https://www.prsonas.com/hubfs/luddites.png"
+alt="Luddites destroying machinery" />
+<figcaption aria-hidden="true">Luddites destroying
+machinery</figcaption>
+</figure>
+</section>
+<section id="flash-forward-to-today" class="slide level2">
+<h2>Flash-forward to today</h2>
+<blockquote>
+<p>Don’t hunt the puppet, but rather hunt the puppet masters</p>
+</blockquote>
+<p>~ Shoshana Zuboff, <em>The Age of Survelliance Capitalism</em></p>
+</section>
+<section id="philosophy-in-science" class="slide level2">
+<h2>Philosophy <em>in</em> Science</h2>
+<blockquote>
+<p>[Philosophy in Science] is dedicated to fostering the pursuit of a
+philosophy of science that considers theory, practice and the world
+simultaneously, and never in isolation from each other.</p>
+</blockquote>
+<p>~ Pradeu et al., <em>Philosophy in Science: Can philosophers of
+science permeate through science and produce scientific
+knowledge?</em></p>
+</section>
+<section id="digital-humanities" class="slide level2">
+<h2>Digital Humanities?</h2>
+<p>Subverting and revolutionizing the relation between humanities and
+tech: the point is not about moving humanistic heritage to the digital
+domain, but rather using sociopolitical, philosophical and
+anthropological tools to <strong>question digital technical
+infrastructures</strong>.</p>
+</section>
+<section id="the-essence-of-technology" class="slide level2">
+<h2>The essence of technology</h2>
+<blockquote>
+<p>Technology is not equivalent to the essence of technology. When we
+are seeking the essence of “tree,” we have to become aware that that
+which pervades every tree, as tree, is not itself a tree that can be
+encountered among all the other trees.</p>
+<p>Likewise, the essence of technology is by no means anything
+technological. Thus we shall never experience our relationship to the
+essence of technology so long as we merely conceive and push forward the
+technological, put up with it, or evade it. Everywhere we remain unfree
+and chained to technology, whether we passionately affirm or deny it.
+But <u>we are delivered over to it in the worst possible way when we
+regard it as something neutral</u>; for this conception of it, to which
+today we particularly like to do homage, makes us utterly blind to the
+essence of technology.</p>
+</blockquote>
+<p>~ Martin Heidegger, <em>The Question Concerning Technology</em></p>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>But this much remains correct: <u>modern technology too is a means to
+an end</u>. That is why the instrumental conception of technology
+conditions every attempt to bring man into the right relation to
+technology. <u>Everything depends on our manipulating technology in the
+proper manner as a means</u>. We will, as we say, “get” technology
+“spiritually in hand.” We will master it. <u>The will to mastery becomes
+all the more urgent the more technology threatens to slip from human
+control</u>.</p>
+</blockquote>
+</section>
+<section id="max-weber" class="slide level2">
+<h2>Max Weber</h2>
+<blockquote>
+<p>The fact that what is called the technological development of modern
+times has been so largely oriented economically to profit-making is one
+of the fundamental facts of the history of technology. […] the main
+emphasis at all times, and especially the present, has lain in <u>the
+economic determination of technological development</u>. Had not
+rational calculation formed the basis of economic activity, had there
+not been certain very particular conditions in its economic background,
+<u>rational technology could never have come into existence</u>.</p>
+</blockquote>
+</section>
+<section id="surveillance-capitalism-is-not-technology"
+class="slide level2">
+<h2>Surveillance Capitalism is not Technology</h2>
+<blockquote>
+<p><u>Surveillance capitalism is not technology</u>; it is a logic that
+imbues technology and commands it into action. Surveillance capitalism
+is a market form that is unimaginable outside the digital milieu, but it
+is not the same as the “digital”. […] surveillance capitalists want us
+to think that their practices are inevitable expressions of the
+technologies they employ.</p>
+</blockquote>
+<p>~ Shoshana Zuboff, <em>The Age of Survelliance Capitalism</em></p>
+</section>
+<section id="karl-marx" class="slide level2">
+<h2>Karl Marx</h2>
+<blockquote>
+<p>The bourgeoisie cannot exist without <strong>constantly
+revolutionising the instruments of production</strong>, and thereby the
+relations of production, and with them the whole relations of society.
+Conservation of the old modes of production in unaltered form, was, on
+the contrary, the first condition of existence for all earlier
+industrial classes. Constant revolutionising of production,
+uninterrupted disturbance of all social conditions, everlasting
+uncertainty and agitation distinguish the bourgeois epoch from all
+earlier ones.</p>
+</blockquote>
+<p>~ Karl Marx, <em>The Manifesto of the Communist Party</em></p>
+</section>
+<section class="slide level2">
+
+<h3 id="automating-inequalities">Automating inequalities</h3>
+<blockquote>
+<p>The skyrocketing economic insecurity of the last decade has been
+accompanied by an equally rapid rise of sophisticated data-based
+technologies in public services: predictive algorithms, risk models, and
+automated eligibility systems. Massive investments in data-driven
+administration of public programs are rationalized by a call for
+efficiency, doing more with less, and getting help to those who really
+need it. But the uptake of these tools is occurring at a time when
+<strong>programs that serve the poor are as unpopular as they have ever
+been</strong>. This is not a coincidence. Technologies of poverty
+management are not neutral. They are shaped by our nation’s fear of
+economic insecurity and hatred of the poor; they in turn shape the
+politics and experience of poverty.</p>
+</blockquote>
+<p>~ Virginia Eubanks, <em>Automating Inequality: How High-tech tools
+profile, police, and punish the poor</em></p>
+</section>
+<section id="a-room-a-world-on-fire" class="slide level2">
+<h2>A room (a world) on fire</h2>
+<p>Thinking philosophically means slowing things down. It means waiting
+to see the results, it means diving into the exhausting process of
+<strong>questioning anything and everything</strong>.</p>
+</section>
+<section id="politcal-code" class="slide level2">
+<h2>Politcal code!</h2>
+<p>Let us fight the battle Aaron Swartz fought. Let’s not just look for
+the solution <em>within</em> code, but using it to empower political
+action.</p>
+<figure>
+<img
+data-src="https://www.bibliotecapleyades.net/imagenes_sociopol/internet136_01.jpg"
+alt="Aaron Swartz speaking at a protest" />
+<figcaption aria-hidden="true">Aaron Swartz speaking at a
+protest</figcaption>
+</figure>
+</section>
+<section id="p2p-for-normies" class="slide level2">
+<h2>p2p for normies</h2>
+<p>How to make non-techies how peer-to-peer/decentralization works?</p>
+<p><strong>With my grandma’s yarn!</strong></p>
+</section>
+<section id="knitting-our-internet" class="slide level2">
+<h2>🧶 Knitting Our Internet 🔮</h2>
+</section>
+<section id="resources-links-girl-stuff" class="slide level2">
+<h2>Resources, links, girl stuff 💕</h2>
+<ul>
+<li>https://tommi.space + <span class="citation"
+data-cites="tommi">@tommi</span><span class="citation"
+data-cites="pan.rent">@pan.rent</span></li>
+<li>Computer Sciences Are Social Sciences:
+https://tommi.space/csss/</li>
+<li>🚧 <strong>WIP</strong> for Knitting our Internet:
+<ul>
+<li>https://tommi.space/ournet/</li>
+<li>https://codeberg.org/tommi/ournet</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
